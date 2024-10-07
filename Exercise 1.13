@@ -1,0 +1,18 @@
+#include <iostream>
+int main({
+    // error: main cannot be declared as global variable
+    // error: expected expression
+    // error: expected ';' after top level declarator
+    
+    std::cout << "Read each file." << std::endl:
+    // error: expected ';' after expression
+
+    std::cout << Update master. << std::endl;
+    // error: expected ';' after expression
+    // error: use of undeclared identifier 'Update'
+    // error: use of undeclared identifier 'master'
+    // error: expected unqualified-id
+
+    return 0
+    // error: expected ';' after return statement
+}
