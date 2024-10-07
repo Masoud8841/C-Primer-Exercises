@@ -1,0 +1,8 @@
+#include <iostream>
+int main(){
+    std::cout << "/*" << std::endl;
+    std::cout << "*/" << std::endl;
+    std::cout << /* "*/" */ << std::endl;
+    return 0;
+}
+// the first two lines of main are correct and print output as expected; the third one is illegal;
