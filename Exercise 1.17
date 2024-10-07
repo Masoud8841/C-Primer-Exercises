@@ -1,0 +1,13 @@
+#include <iostream>
+int main(){
+    std::cout << "Enter a series of numbers:" << std::endl;
+    int number, countNegativeNumbers=0;
+    while(std::cin >> number){
+        if(number<0){
+            ++countNegativeNumbers;
+        }
+    }
+    std::cout<< "The number of negative numbers in the series is "<< countNegativeNumbers << std::endl;
+    return 0;
+}
+// count number of negative numbers in an input series 
