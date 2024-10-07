@@ -1,0 +1,16 @@
+#include <iostream>
+int main(){
+    int sumFor=0, sumWhile=0;
+    for(int i=50;i<=100;++i){
+        sumFor+=i;
+    }
+    int i=50;
+    while(i<=100){
+        sumWhile+=i;
+        ++i;
+    }
+    std::cout << "The summation of 50 to 100 integers are " << sumFor << std::endl;
+    std::cout << "The summation of 50 to 100 integers are " << sumWhile << std::endl;
+    return 0;
+}
+// both loops return 3825;
