@@ -1,0 +1,17 @@
+#include <iostream>
+int main(){
+    std::cout << "Enter two numbers:" << std::endl;
+    int v1, v2;
+    std::cin >> v1 >> v2; // read input
+    // identify larger number
+    if(v1<v2){
+        std::cout << v2 << " is larger!" << std::endl;
+    }
+    else if(v1>v2){
+        std::cout << v1 << " is larger!" << std::endl;
+    }
+    else{
+        std::cout << "numbers are equal!" << std::endl;
+    }
+    return 0;
+}
