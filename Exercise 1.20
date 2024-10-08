@@ -1,0 +1,18 @@
+#include <iostream>
+int main(){
+    std::cout << "Enter two integers:" << std::endl;
+    int num1, num2, sumFor=0, sumWhile=0, count;
+    std::cin >> num1 >> num2;
+    for(int i=num1;i<=num2;++i){
+        sumFor+=i;
+    }
+    std::cout<< "the sum of numbers between "<< num1 << " and  " << num2 << " are: "<< sumFor << std::endl;
+    count=num1;
+    while(count<=num2){
+        sumWhile+=count;
+        ++count;
+    }
+    std::cout<< "the sum of numbers between "<< num1 << " and  " << num2 << " are: "<< sumWhile << std::endl;
+    return 0;
+}
+// by inputing 7 3 in this order, one gets zero since the loops are not executed.
