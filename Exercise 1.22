@@ -1,0 +1,13 @@
+#include <iostream>
+#include "Sales_item.h"
+int main(){
+    Sales_item item1, item2;
+    std::cout<< "enter two sold book items:"<< std::endl;
+    // read ISBN, number of copies sold, and the sales price:
+    // 0-201-70353-X 3 20
+    // 0-201-70353-X 2 25
+    std::cin>> item1 >> item2;
+    std::cout<< item1+item2 << std::endl;
+    // 0-201-70353-X 5 110 22
+    return 0;
+}
