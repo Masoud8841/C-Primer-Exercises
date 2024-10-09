@@ -1,0 +1,21 @@
+#include <iostream>
+int main(){
+    std::cout<< sizeof('a') << std::endl; //1 ; a char
+    std::cout<< sizeof(L'a') << std::endl; //4 ; a wide_char
+
+    std::cout<< sizeof("a") << std::endl; //2 ; a string with 'a' and '\0'
+    std::cout<< sizeof(L"a") << std::endl; //8 ; a string of wide_char with L'a' and L'\0'
+
+    std::cout<< sizeof(10) << std::endl;  //4 ; int
+    std::cout<< sizeof(10u) << std::endl;  //4 ; unsigned int
+    std::cout<< sizeof(10L) << std::endl;  //8 ; long
+    std::cout<< sizeof(10uL) << std::endl; //8 ; unsigned long
+    std::cout<< sizeof(012) << std::endl; //4 ; int written in octal i.e., 1*8+2=10
+    std::cout<< sizeof(0xC) << std::endl; //4 ; int written in hexadecimal .i.e, 12
+
+    std::cout<< sizeof(3.14) << std::endl; //8 ; double
+    std::cout<< sizeof(3.14f) << std::endl; //4 ; float
+    std::cout<< sizeof(3.14L) << std::endl; //8 ; double
+
+    return 0;
+}
