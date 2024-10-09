@@ -1,0 +1,42 @@
+#include <iostream>
+#include "Sales_item.h"
+int main(){
+    const int maxBooks=10; // count maximum 10 different books; can be more flexible by using vectors instead of arrays
+    Sales_item items[maxBooks], item;
+    int countItems=0, sameItemFlag=0;
+    std::cout<< "enter sold book items:"<< std::endl;
+    // read ISBN, number of copies sold, and the sales price:
+    /* 
+    0-201-70353-X 3 20
+    0-201-70354-X 2 25
+    0-201-70354-X 4 40
+    0-201-70353-X 8 25
+    0-201-70355-X 4 20
+    0-201-70355-X 10 30
+    no more items
+    */
+    std::cin>> items[0];
+    ++countItems;
+    while((std::cin >> item) && countItems<maxBooks){
+        sameItemFlag=1;
+        for(int i=0;i<countItems;++i){
+            if(items[i].same_isbn(item)){
+                items[i]+=item;
+                sameItemFlag=0;
+                break;
+            }
+        }
+        if(sameItemFlag){
+            items[countItems]=item;
+            ++countItems;
+        }
+    }
+    for(int i=0;i<countItems;++i){
+         std::cout<< items[i] << std::endl;
+    }
+    /* 0-201-70353-X   11      260     23.6364
+       0-201-70354-X   6       210     35
+       0-201-70355-X   14      380     27.1429
+    */
+    return 0;
+}
