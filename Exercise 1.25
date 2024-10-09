@@ -12,7 +12,7 @@ int main(){
     if(std::cin >> total){
         while(std::cin >> trans){
             if(total.same_isbn(trans)){
-                total+=trans;
+                total=total+trans;
             }
             else{
                 std::cout << total << std::endl;
