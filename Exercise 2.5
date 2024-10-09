@@ -1,0 +1,21 @@
+#include <iomanip>
+#include <iostream>
+#include <limits>
+
+int main(){
+    float var1=float(1)/3;
+    double var2=double(1)/3;
+
+    std::cout<< "float size is "<<sizeof(var1)<<std::endl;
+    std::cout<< "one over three is "<< std::setprecision(15)<<var1<<std::endl;
+
+    std::cout<< "double size is "<<sizeof(var2)<<std::endl;
+    std::cout<< "one over three is "<< std::setprecision(15)<<var2<<std::endl;
+    
+}
+/*
+float size is 4
+one over three is 0.333333343267441
+double size is 8
+one over three is 0.333333333333333
+*/
