@@ -1,0 +1,12 @@
+#include <iostream>
+#include <cmath>
+int main(){
+    int principal, payments;
+    double rate;
+    std::cout<< "enter your principal in SEK and interest rate in percent: "<< std::endl;
+    // 3000000 4.3
+    std::cin>> principal >> rate;
+    payments=principal*(std::pow(1+0.01*rate,double(1)/12)-1);
+    std::cout<< "Your monthly interest payment is: "<< payments << " SEK" << std::endl;
+    // Your monthly interest payment is: 10543 SEK
+}
