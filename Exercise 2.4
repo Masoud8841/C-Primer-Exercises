@@ -1,0 +1,20 @@
+// for unsigned, we get a reminder to the given number; for signed short, the value depend on the compiler.
+#include <iostream>
+int main(){
+    short var1=100000;
+    unsigned short var2=100000;
+
+    std::cout<< "short value is "<<var1<<std::endl;
+    std::cout<< "unsigned short value is "<<var2<<std::endl;
+    
+}
+// short value is -31072
+// unsigned short value is 34464
+/*
+short limits are:
+-32768
+32767
+unsigned short limits are:
+0
+65535
+*/
