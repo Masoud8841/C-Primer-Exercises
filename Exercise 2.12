@@ -1,0 +1,8 @@
+#include <iostream>
+int main(){
+    int var1=10; // var1 is lvalue and 10 is rvalue
+    int var2;
+    //var2=var1; lvalue can be on the right side
+    //10=var2; lvalue cannot be on the left side and the code gives an error
+    return 0;
+}
