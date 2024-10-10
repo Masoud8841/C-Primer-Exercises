@@ -1,0 +1,16 @@
+#include <iostream>
+double calc(void);
+
+int main(){
+    //int car=1024, auto=2048; // auto is reserved, use automobile
+    int ival=ival; // inval is not initialized 
+    std::cout<< ival <<std::endl;
+    //std::cin >> int input_value; //define int input_value first and then use it in cin;
+    //double salary=wage=9999.99; // use comma between wage and salary and initialize them separately
+    //double calc=calc(); //same name for function and variable; use calc_val as the variable
+
+    return 0;
+}
+double calc(){
+    return 3.14;
+}
