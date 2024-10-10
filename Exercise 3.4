@@ -1,0 +1,26 @@
+#include <iostream>
+using std::cout;
+using std::endl;
+using std::string;
+string s1;
+int main(){
+    string s2;
+    int i1=sizeof(s1), i2=sizeof(s2);
+    cout<< "s1 is:" << endl;
+    for(int i=0;i<i1;++i){
+        cout<<(int) s1[i];
+    }
+    cout << endl;
+    cout<< "s2 is:" << endl;
+    for(int i=0;i<i2;++i){
+        cout<<(int) s2[i];
+    }
+    cout << endl;
+    return 0;
+}
+/*
+s1 is:
+000000000000000000000000
+s2 is:
+000000000000000000000000
+*/
