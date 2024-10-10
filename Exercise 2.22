@@ -1,0 +1,3 @@
+for(int i=0;i<100;++i)
+//process i
+//100 is a magic number; one can define const int number_of_books=100; for example to avoid use of magic numbers...
