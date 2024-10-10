@@ -1,0 +1,8 @@
+#include <iostream>
+int main(){
+    int month1=9, day1=7;
+    int month2=011, day2=07; //09 is invalid, use 011 instead
+    std::cout<< month1 << " and " << day1 << std::endl;
+    std::cout<< month2 << " and " << day2 << std::endl;
+    return 0;
+}
