@@ -1,0 +1,4 @@
+    extern int ix=1024;// definition since initialized
+    int iy; // definition since not extern
+    extern int iz; // declaration 
+    extern const int &ri; // declaration 
