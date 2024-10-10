@@ -1,4 +1,5 @@
-int var; // header if used in several source codes
-const double pi=3.1416; // source code since const is local
-extern int total=255; // source code since this is a definition with initialization
-const double sq2=sqrt(2.0); // source code since const is local
+int var; // definition should not be used in header
+const double pi=3.1416; // const is local so this can be defined in the header
+extern int total=255; // declaration can be used in header but since this value is initialized, 
+// it is definition and should not be used in header
+const double sq2=sqrt(2.0); // header since const with literal value can be used in header
