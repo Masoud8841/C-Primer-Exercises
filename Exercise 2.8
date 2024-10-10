@@ -1,0 +1,9 @@
+#include <iostream>
+int main(){
+    std::cout<< sizeof(-10) << std::endl; //4 ; int
+    std::cout<< sizeof(-10u) << std::endl; //4 ; unsigned int
+    std::cout<< sizeof(-10.) << std::endl; //8 ; double
+    std::cout<< sizeof(-10e-2) << std::endl; //8 ; double
+
+    return 0;
+}
