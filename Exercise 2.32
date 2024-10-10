@@ -1,0 +1,4 @@
+int var; // header if used in several source codes
+const double pi=3.1416; // source code since const is local
+extern int total=255; // source code since this is a definition with initialization
+const double sq2=sqrt(2.0); // source code since const is local
