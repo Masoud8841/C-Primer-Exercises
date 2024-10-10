@@ -1,0 +1,8 @@
+#include <iostream>
+class Info{
+    private:
+    std::string phoneNumber;
+    std::string address;
+    std::string name;
+    std::string student_ID;
+}; 
