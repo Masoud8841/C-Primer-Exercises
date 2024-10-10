@@ -1,0 +1,7 @@
+#include <iostream>
+int main(){
+    int var1=10; // var1 is lvalue and 10 is rvalue
+    ++var1; // lvalue required
+    std::cout<<var1<<std::endl;
+    return 0;
+}
