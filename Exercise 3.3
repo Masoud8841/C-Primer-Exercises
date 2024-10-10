@@ -1,0 +1,12 @@
+#include <iostream>
+using std::cout;
+using std::endl;
+using std::string;
+int main(){
+    string s1("Hi"); // copy a string literal
+    string s2(s1); // copy another string
+    string s3(3,'H'); // have n, 3 in this case, 'H' char.
+
+    cout<< s1 << ", " << s2 << ", " << s3 << endl;
+}
+// Hi, Hi, HHH
