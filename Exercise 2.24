@@ -1,0 +1,10 @@
+#include <iostream>
+int main(){
+    int ival=1.01; // OK but note that ival would be 1 not 1.01
+    //int &rval1=1.01; // not OK, reference should be to an object not a literal
+    int &rval2=ival;
+    const int &rval3=1;
+
+    return 0;
+}
+
