@@ -1,0 +1,10 @@
+#include <iostream>
+std::string name1="hi there!";
+int main(){
+    extern std::string name1; // has to be defined somewhere else
+    std::string name2("exercise 3.5a");
+    //extern std::string name3("exercise 3.5a");// not allowed to initialize local variable on my compiler
+    std::cout<< name1 <<", "<<name2<<std::endl;
+
+    return 0;
+}
