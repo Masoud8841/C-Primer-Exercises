@@ -1,0 +1,10 @@
+#include <iostream>
+int main(){
+    int ival=0;
+    const int &ri=0;
+    ival=ri;
+    ri=ival; // const cannot be assigned
+
+    return 0;
+}
+
