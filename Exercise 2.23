@@ -1,0 +1,10 @@
+#include <iostream>
+int main(){
+
+    const int buf; // mut be initialized
+    int cnt=0;
+    const int sz=cnt;
+    cnt++; 
+    sz++; // const cannot be modified
+    return 0;
+}
