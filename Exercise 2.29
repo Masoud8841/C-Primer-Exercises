@@ -1,0 +1,2 @@
+not declared, or private, data members and methods are not accessible outside of the class
+public data members and methods are accessible outside of the class
