@@ -1,0 +1,25 @@
+#include <iostream>
+#include <ctype.h>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::getline;
+using std::ispunct;
+int main(){
+    string line1, line2;
+    cout<<"enter a sentence with punctuations:"<<endl;
+    getline(cin,line1);
+    for(string::size_type i=0; i!=line1.size();++i){
+        if(!ispunct(line1[i])){
+            line2+=line1[i];
+        }
+    }
+    cout<< line2 << endl;
+    return 0;
+}
+/*
+Hi! My name is Masoud. So, what is your name?!
+*/
+// Hi My name is Masoud So what is your name
+
