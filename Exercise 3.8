@@ -1,0 +1,25 @@
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
+int main(){
+    string sentence1, sentence2, word;
+    cout<< "Enter your words:"<<endl;
+    cin >> sentence1;
+    sentence2=sentence1;
+    while(cin >> word){
+        sentence1+=word;
+        sentence2=sentence2+" "+word;
+    }
+    cout << sentence1 << endl;
+    cout << sentence2 << endl;
+    return 0;
+}
+/*
+Hi! My name is Masoud.
+What is your name? (control+d)
+*/
+//Hi!MynameisMasoud.Whatisyourname?
+//Hi! My name is Masoud. What is your name?
