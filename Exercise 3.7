@@ -1,0 +1,43 @@
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
+int main(){
+    string string1, string2;
+    cout<< "Enter two strings:" << endl;
+    cin >> string1 >> string2;
+    if(string1==string2){
+        cout<< string1 << " and " << string2 <<" are the same!" << endl;
+        return 0;
+    }
+    else{
+        if(string1>string2){
+            cout<< string1 <<" is larger than " << string2 << endl;
+        }
+        else{
+            cout<< string2 <<" is larger than " << string1 << endl;
+        }
+        if(string1.size()==string2.size()){
+            cout<< string1 <<" and " << string2 << " have the same number of characters."<< endl;
+            return 0;
+        }
+        else{
+            if(string1.size()>string2.size()){
+                cout<< string1 <<" has more characters than " << string2 << endl;
+                return 0;
+            }
+            else{
+                cout<< string2 <<" has more characters than " << string1 << endl;
+                return 0;
+            }
+        }
+    }
+    return 0;
+}
+/*
+Hi Hi
+hi Hi
+Hi there!
+*/
