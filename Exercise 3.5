@@ -1,0 +1,36 @@
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::getline;
+
+int main(){
+    string line;
+    string word;
+    cout<< "enter your text:"<<endl;
+    cout<< "use quit in a line to stop the reading!"<< endl;
+    while(getline(cin,line)){
+        if(!line.compare("quit")){
+            break;
+        }
+        cout<< line << endl;
+    }
+    cout<< "Start your words!"<<endl;
+    cout<< "write quit to stop the reading!"<< endl;
+    while(cin>>word){
+        if(!word.compare("quit")){
+            break;
+        }
+        cout<< word << endl;
+    }
+    return 0;
+}
+/*
+Hi! My name is Masoud?
+What is your name?
+quit
+Hi! My name is Masoud?
+What is your name?
+quit
+*/
