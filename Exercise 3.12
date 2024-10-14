@@ -1,0 +1,49 @@
+#include <iostream>
+#include<vector>
+using std::cout;
+using std::endl;
+using std::string;
+using std::vector;
+int main(){
+    vector<int> ivec1; //empty
+    vector<int> ivec2(10); // 10 elements with zero value for each
+    vector<int> ivec3(10,42);  // 10 elements with 42 value for each
+    vector<string> svec1; //empty
+    vector<string> svec2(10);// 10 empty strings
+    vector<string> svec3(10,"hello"); // 10 strings with "hello" value for each
+    for(vector<int>::size_type i=0;i!=ivec1.size();++i){
+        cout<< ivec1[i] << ", ";
+    }
+    cout << endl;
+    for(vector<int>::size_type i=0;i!=ivec2.size();++i){
+        cout<< ivec2[i] << ", ";
+    }
+    cout << endl;
+    for(vector<int>::size_type i=0;i!=ivec3.size();++i){
+        cout<< ivec3[i] << ", ";
+    }
+    cout << endl;
+    for(vector<string>::size_type i=0;i!=svec1.size();++i){
+        cout<< svec1[i] << ", ";
+    }
+    cout << endl;
+    for(vector<string>::size_type i=0;i!=svec2.size();++i){
+        cout<< svec2[i] << ", ";
+    }
+    cout << endl;
+    for(vector<string>::size_type i=0;i!=svec3.size();++i){
+        cout<< svec3[i] << ", ";
+    }
+    cout << endl;
+    return 0;
+}
+/*
+
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 
+
+, , , , , , , , , , 
+hello, hello, hello, hello, hello, hello, hello, hello, hello, hello, 
+*/
+
+
