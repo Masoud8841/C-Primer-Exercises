@@ -1,0 +1,15 @@
+#include <iostream>
+#include<vector>
+using std::string;
+using std::vector;
+int main(){
+    vector<vector<int>> ivec; // OK, vector<T> is a type, i.e., T
+    vector<string> svec1=ivec; // error, string initialized by int!
+    vector<string> svec2(10,"null"); //OK
+    return 0;
+}
+/*
+
+*/
+
+
