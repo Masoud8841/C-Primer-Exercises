@@ -1,0 +1,41 @@
+#include <iostream>
+#include <ctype.h>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::toupper;
+int main(){
+    vector<string> textVec;
+    string word;
+    cout<< "enter your text"<<endl;
+    while(cin>>word){
+        for(string::iterator iter=word.begin();iter!=word.end();++iter){
+            *iter=toupper(*iter);
+        }
+        textVec.push_back(word);
+    }
+    int cnt=0;
+    for(vector<string>::const_iterator iter=textVec.begin();iter!=textVec.end();++iter){
+        cout<<*iter<<" ";
+        if(cnt%8==7){
+            cout<<endl;
+        }
+        ++cnt;
+    }
+    cout<<endl;
+    return 0;
+}
+/*
+input: 
+Hi! My name is Masoud. I am learning C++. This language is much more user friendly than C and one
+can write more complicated programs in shorter times.
+control+d
+output:
+HI! MY NAME IS MASOUD. I AM LEARNING 
+C++. THIS LANGUAGE IS MUCH MORE USER FRIENDLY 
+THAN C AND ONE CAN WRITE MORE COMPLICATED 
+PROGRAMS IN SHORTER TIMES. 
+*/
