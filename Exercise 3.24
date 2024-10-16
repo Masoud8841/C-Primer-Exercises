@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <bitset>
+#include <string>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::vector;
+using std::bitset;
+using std::string;
+int main(){
+    bitset<32> bvec1("1000000010000100101110");
+    bitset<32> bvec2;
+    bvec2.reset();
+    int num1=0, num2=1, temp;
+    while(num2<=21){
+        bvec2.set(num2);
+        temp=num1+num2;
+        num1=num2;
+        num2=temp;
+    }
+    cout<< bvec1 << endl;
+    cout <<bvec2 << endl;
+    return 0;
+}
+/*
+output:
+00000000001000000010000100101110
+00000000001000000010000100101110
+*/
