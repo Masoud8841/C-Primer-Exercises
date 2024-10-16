@@ -1,0 +1,19 @@
+#include <iostream>
+using std::cin;
+using std::cout;
+using std::endl;
+
+int main(){
+    const size_t array1_size=10;
+    int array1[array1_size];
+    for(size_t i=0;i!=array1_size;++i){
+        array1[i]=i;
+        cout<< array1[i]<<", ";
+    }
+    cout<<endl;
+    return 0;
+}
+/*
+output:
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+*/
