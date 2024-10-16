@@ -1,0 +1,23 @@
+#include <iostream>
+int get_size(void);
+using std::cin;
+using std::cout;
+using std::endl;
+
+int main(){
+    unsigned buf_size=1024;
+    int ia1[buf_size]; // should use const size not variable; my complier accepts this though.
+    int ia2[get_size()]; // should use const size not variable; my complier accepts this though!
+    int ia3[4*7-14]; // fine!
+    //char st[11]="fundamental"; //error: no space is available for null char! Size should be 12!
+    return 0;
+}
+
+int get_size(){
+    int var1;
+    cout<< "type the size of array:"<<endl;
+    cin >> var1;
+    return var1;
+}
+/*
+*/
