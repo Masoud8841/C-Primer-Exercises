@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+using std::cin;
+using std::cout;
+using std::endl;
+using std::vector;
+
+int main(){
+    const size_t array_size=4;
+    int array1[]={1,1,1,1};
+    int array2[array_size];
+    for(size_t i=0;i!=array_size;++i){
+        array2[i]=array1[i];
+        cout<< array2[i] <<", ";
+    }
+    cout << endl;
+    vector<int> ivec1(4,1);
+    vector<int> ivec2(ivec1);
+    for(vector<int>::const_iterator iter=ivec2.begin();iter!=ivec2.end();++iter){
+        cout<< *iter <<", ";
+    }
+    cout<< endl;
+
+    return 0;
+}
+/*
+output:
+1, 1, 1, 1, 
+1, 1, 1, 1, 
+*/
