@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+using std::cin;
+using std::cout;
+using std::endl;
+using std::vector;
+
+int main(){
+    const size_t array1_size=4;
+    const size_t array2_size=4;
+    int array1[]={1,1,1,1};
+    int array2[]={1,1,1,2};
+    int flag=0;
+    if(array1_size==array2_size){
+        for(size_t i=0;i!=array1_size;++i){
+            if(array1[i]!=array2[i]){
+                cout<<"array1 and array2 contain different values!"<<endl;
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0){
+            cout<< "array1 and array2 are equal!"<<endl;
+        }
+    }
+    else{
+        cout<< "array1 and array2 have different sizes!"<<endl;
+    }
+    vector<int> ivec1(4,1);
+    vector<int> ivec2(ivec1);
+    if(ivec1==ivec2){
+        cout<< "ivec1 and ivec2 are equal."<<endl;
+    }
+    else{
+        cout<< "ivec1 and ivec2 are not equal!"<<endl;
+    }
+    
+
+    return 0;
+}
+/*
+output:
+array1 and array2 contain different values!
+ivec1 and ivec2 are equal.
+*/
