@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <bitset>
+#include <string>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::vector;
+using std::bitset;
+using std::string;
+int main(){
+    bitset<64> bitvec1(32); // 64 bits; 32=0b100000, and the rest of bits are zero
+    bitset<32> bitvec2(1010101); // 1010101=0b11110110100110110101 , and the rest of 32 bits are zero
+    string bstr;
+    cout<< "type 8 bits: "<<endl;
+    cin >> bstr;
+    bitset<8> bitvec3(bstr); // input was 10011011 and output is the same.
+    cout<< bitvec1 << endl;
+    cout<< bitvec2 << endl;
+    cout<< bitvec3 << endl;
+    return 0;
+}
+/*
+input:
+10011011
+output:
+0000000000000000000000000000000000000000000000000000000000100000
+00000000000011110110100110110101
+10011011
+*/
