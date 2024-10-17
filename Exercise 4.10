@@ -1,0 +1,12 @@
+
+int main(){
+    int* ip1;
+    int *ip2;
+    int* ip3, ip4;
+    int ip5, *ip6;
+    return 0;
+}
+/*
+in the above code, ip4 and ip5 are int while ip3 and ip6 are int pointers.
+Hence, it seems *variable is more meaningful.
+*/
