@@ -1,0 +1,15 @@
+#include <string>
+using std::string;
+int main(){
+    int* ip;
+    string s, *sp=0;
+    int i1;
+    double *dp=&i1; // not legal, int address is assigned to double pointer
+    int *ip1, ip2;
+    const int i=0, *p1=i;  // legal
+    string *p2=NULL;
+    return 0;
+}
+/*
+
+*/
