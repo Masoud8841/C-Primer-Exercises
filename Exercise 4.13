@@ -1,0 +1,13 @@
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+using std::string;
+int main(){
+    int i=42;
+    void *p=&i; // void pointer takes the address and can be assigned from any type of pointer.
+    long *lp=&i; // error: assign int pointer to long pointer
+    return 0;
+}
+/*
+*/
