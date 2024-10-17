@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+using std::string;
+int main(){
+    int i1, *i1p=&i1;
+    double i2, *i2p=&i2;
+    string i3, *i3p=&i3;
+    cout<<i1p<<endl;
+    cout<<i2p<<endl;
+    cout<<i3p<<endl;
+    return 0;
+}
+/*
+all pointers are addresses and depending on the type, one can put some bytes together; 
+type cannot be infered from the address. 
+output:
+0x16d6af158
+0x16d6af148
+0x16d6af128
+*/
