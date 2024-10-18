@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+using std::string;
+int main(){
+    int i1=42, i2=50;
+    int &refi1=i1; //ref to i1
+    int* pi1=&i1, *pi2=&i2; // pointers to i1 and i2
+    cout<< "pi1= "<< pi1<<endl;
+    cout<< "i1= "<< i1 << endl;
+    pi1=pi2;
+    cout<< "pi1= "<< pi1<<", and *pi1= " << *pi1 << endl;
+    cout << "i1= "<<i1 << endl;
+
+    cout<< "refi1= " << refi1 << endl;
+    refi1=i2;
+    cout<< "refi1= " << refi1 << ", and i1= "<< i1 << endl;
+
+    return 0;
+}
+/*
+pi1 points to i1 but is an independent variable; so changing pi1 does not change i1;
+refi1 is synonymous to i1 and changing refi1 is the same as chaning i1.
+output:
+pi1= 0x16fbb7158
+i1= 42
+pi1= 0x16fbb7154, and *pi1= 50
+i1= 42
+refi1= 42
+refi1= 50, and i1= 50
+*/
