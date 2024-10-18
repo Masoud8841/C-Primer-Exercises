@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+using std::string;
+int main(){
+    int i=42, j=1024;
+    int *p1=&i, *p2=&j;
+    *p2= *p1 * *p2; // j=i times j
+    *p1 *= *p1; // i= i times i
+
+    cout<< "j is: " << j << endl;
+    cout << "i is: " << i << endl;
+
+    return 0;
+}
+/*
+output:
+j is: 43008
+i is: 1764
+*/
