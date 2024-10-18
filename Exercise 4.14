@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+using std::string;
+int main(){
+    int i1=42, i2=50;
+    int *pi1=&i1, *pi2=&i2;
+    cout<< "pi1 is: "<<pi1<<endl;
+    cout<< "pi1 points to: "<<*pi1<<endl;
+    cout<< "pi2 is: "<<pi2<<endl;
+    cout<< "pi2 points to: "<<*pi2<<endl;
+    pi1=pi2;
+    cout<<"we assigned pi2 to pi1:"<<endl;
+    cout<< "pi1 is: "<<pi1<<endl;
+    cout<< "pi1 points to: "<<*pi1<<endl;
+    return 0;
+}
+/*
+output:
+pi1 is: 0x16baa7158
+pi1 points to: 42
+pi2 is: 0x16baa7154
+pi2 points to: 50
+we assigned pi2 to pi1:
+pi1 is: 0x16baa7154
+pi1 points to: 50
+*/
