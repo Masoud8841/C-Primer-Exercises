@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+using std::string;
+int main(){
+    size_t arr_size=5;
+    int arr[]={1,2,3,4,5};
+    int *p1=arr, *p2=&arr[arr_size];
+    cout<< p1<< ", " << p2 << endl;
+    p1+=p2-p1; // computes p2-p1 difference and adds it to p1; the operation is illigal 
+    int *p3=p1+(p2-p1);
+    cout<< p1 << endl;
+    cout<< p3 << endl;
+    return 0;
+}
+/*
+when p1 and p2 point to the same array, or to NULL, the operation is feasible.
+output:
+0x16b9e7140, 0x16b9e7154
+0x16b9e7154
+0x16b9e7154
+*/
