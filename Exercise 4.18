@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+using std::string;
+int main(){
+    size_t size_array=10;
+    int iarr[size_array];
+    int *ptr=iarr;
+    for(int *ptr=iarr;ptr!=iarr+10;++ptr){
+        *ptr=0;
+    }
+    for(size_t i=0;i!=size_array;++i){
+        cout<< iarr[i]<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
+/*
+output:
+0 0 0 0 0 0 0 0 0 0 
+*/
