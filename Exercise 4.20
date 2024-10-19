@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+int main(){
+    int i=-1; // fine
+    const int ic=i; // fine, initializes cont with a vriable
+    const int *pic=&ic; // fine
+    int *const cpi=&ic; // points to const but not defined as const int
+    const int *const cpic=&ic; // fine
+    return 0;
+}
+/*
+*/
