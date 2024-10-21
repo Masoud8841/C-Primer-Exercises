@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cstring>
+using std::cout;
+using std::endl;
+int main(){
+    size_t char_size=4;
+    char ca1[char_size];
+    const char ca2[]="Hi to you!";
+    
+    strncpy(ca1,ca2,2);
+    cout<< ca1 << endl;
+    strcpy(ca1,ca2);
+    cout<< ca1 << endl;
+
+
+    return 0;
+}
+/*
+strncpy copies n chars so it truncates the string; copy is not done correctly sometimes
+but less risk of copying beyond the size;
+copy is doen without truncation but the risk is writing beyond the array!
+output:
+Hi
+Hi to you!
+*/
