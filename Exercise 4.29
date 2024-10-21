@@ -1,0 +1,55 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <chrono>
+#include <cstring>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+int main(){
+    double avg=0;
+    unsigned numberOfExperiments=100;
+    string str="a very long literal string";
+    for(unsigned j=0;j!=numberOfExperiments;++j){
+            auto start = std::chrono::high_resolution_clock::now();
+        for(string::size_type i=0;i!=1000000;++i){
+            string str2=str;
+            if(str!=str2)
+            ;
+        }
+        auto stop = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+        avg+=((double) duration.count())/numberOfExperiments;
+    }
+
+    cout << avg << endl;
+
+    const char *pc="a very long literal string";
+    const size_t len=strlen(pc);
+    avg=0;
+    for(unsigned j=0;j!=numberOfExperiments;++j){
+        auto start = std::chrono::high_resolution_clock::now();
+        for(size_t i=0;i!=1000000;++i){
+            char *pc2=new char[len+1];
+            strcpy(pc2,pc);
+            if(strcmp(pc2,pc))
+            ;
+            delete [] pc2;
+        }
+        auto stop = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
+        avg+=((double) duration.count())/numberOfExperiments;
+    }
+    cout << avg << endl;
+
+    return 0;
+}
+/*
+the program creates a dynamic string, copies another string into it, does a comparison and repeats.
+The question claims using string is faster; my result shows otherwise! Using C-style is faster!
+output:
+53324.5
+31137.8
+*/
