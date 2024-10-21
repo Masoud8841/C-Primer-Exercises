@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstring>
+#include <string>
+using std::cout;
+using std::endl;
+using std::string;
+int main(){
+    string str1="Hi to you!";
+    string str2="Hi to You";
+    if(str1==str2){
+        cout<< "str1 is equal to str2" << endl;
+    }else{
+        if(str1>str2){
+            cout<< "str1 is greater than str2" << endl;
+        }
+        else{
+            cout<< "str2 is greater than str1" << endl;
+        }
+    }
+    const char ca1[]="Hi to you!";
+    const char ca2[]="Hi to You";
+    size_t size_ca1=strlen(ca1);
+    size_t size_ca2=strlen(ca2);
+    if(strcmp(ca1,ca2)==0){
+        cout<< "ca1 is equal to ca2" << endl;
+    }
+    else{
+        if(strcmp(ca1,ca2)>0){
+            cout<< "ca1 is greater than ca2" << endl;
+        }
+        else{
+            cout<< "ca2 is greater than ca1" << endl;
+        }
+    }
+    return 0;
+}
+/*
+output:
+str1 is greater than str2
+ca1 is greater than ca2
+*/
