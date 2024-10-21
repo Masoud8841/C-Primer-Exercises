@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+int main(){
+    const char ca[]={'h','e','l','l','o'};
+    const char *cp=ca;
+    while(*cp){
+        cout<< *cp << endl;
+        ++cp;
+    }
+    return 0;
+}
+/*
+ca is an array not string (has no null terminator); while loop continues until cp points to somewhere 
+in the memory whose value is '\0'!
+output:
+h
+e
+l
+l
+o
+�
+�
+
+*/
