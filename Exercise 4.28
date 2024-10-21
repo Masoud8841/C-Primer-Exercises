@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+int main(){
+    cout<< "enter a sequence of integers: "<<endl;
+    vector<int> intVec;
+    int temp;
+    while(cin>>temp){
+        intVec.push_back(temp);
+    }
+    int *intarr= new int[intVec.size()];
+    for(vector<int>::size_type i=0;i!=intVec.size();++i){
+        *intarr=intVec[i];
+        cout<< *intarr << " ";
+        ++intarr;
+    }
+    cout << endl;
+    delete [] (intarr-intVec.size());
+    return 0;
+}
+/*
+note: intarr is changed so do not delete an incorrect pointer!
+input:
+1 2 3 4 -1 -2 -3 0 exit
+output:
+1 2 3 4 -1 -2 -3 0
+*/
