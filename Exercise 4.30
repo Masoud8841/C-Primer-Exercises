@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
+void str_concat(char *ca1, char *ca2);
+int main(){
+    size_t max_size_string=20;
+    char ca1[max_size_string];
+    char ca2[]="world!";
+    char ca3[]="Hello ";
+    for(unsigned i=0;i!=6;++i){
+        ca1[i]=ca3[i];
+    }
+    ca1[6]='\0';
+    str_concat(ca1,ca2);
+    cout << ca1 << endl;
+
+    string str1="Hello ";
+    string str2="world!";
+    for(string::size_type i=0;i!=str2.size();++i){
+        str1.push_back(str2[i]);
+    }
+    cout << str1 << endl;
+    return 0;
+}
+
+void str_concat(char *ca1, char *ca2){
+    size_t size_ca1=0;
+    while(ca1[size_ca1]!='\0'){
+        ++size_ca1;
+    }
+    size_t size_ca2=0;
+    while(ca2[size_ca2]!='\0'){
+        ++size_ca2;
+    }
+    for(size_t i=0;i!=size_ca2+1;++i){
+        ca1[i+size_ca1]=ca2[i];
+    }
+    return;
+}
+/*
+Hello world!
+Hello world!
+*/
