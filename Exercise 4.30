@@ -6,18 +6,13 @@ using std::cin;
 using std::endl;
 using std::string;
 
-void str_concat(char *ca1, char *ca2);
+char * str_concat_func(char *ca1, char *ca2);
 int main(){
-    size_t max_size_string=20;
-    char ca1[max_size_string];
     char ca2[]="world!";
-    char ca3[]="Hello ";
-    for(unsigned i=0;i!=6;++i){
-        ca1[i]=ca3[i];
-    }
-    ca1[6]='\0';
-    str_concat(ca1,ca2);
-    cout << ca1 << endl;
+    char ca1[]="Hello ";
+    char *ca3=str_concat_func(ca1,ca2);
+    cout << ca3 << endl;
+    delete [] ca3;
 
     string str1="Hello ";
     string str2="world!";
@@ -28,19 +23,18 @@ int main(){
     return 0;
 }
 
-void str_concat(char *ca1, char *ca2){
-    size_t size_ca1=0;
-    while(ca1[size_ca1]!='\0'){
-        ++size_ca1;
+char * str_concat_func(char *ca1, char *ca2){
+    size_t ca1Size=strlen(ca1), ca2Size=strlen(ca2);
+    char *cp= new char[ca1Size+ca2Size+1];
+    for(size_t i=0;i!=ca1Size;++i){
+        *cp=ca1[i];
+        ++cp;
     }
-    size_t size_ca2=0;
-    while(ca2[size_ca2]!='\0'){
-        ++size_ca2;
+    for(size_t i=0;i!=ca2Size+1;++i){
+        *cp=ca2[i];
+        ++cp;
     }
-    for(size_t i=0;i!=size_ca2+1;++i){
-        ca1[i+size_ca1]=ca2[i];
-    }
-    return;
+    return cp-(ca1Size+ca2Size+1);
 }
 /*
 Hello world!
