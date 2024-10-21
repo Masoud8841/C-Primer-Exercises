@@ -1,0 +1,58 @@
+#include <iostream>
+#include <cstring>
+#include <string>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+int main(){
+    const size_t maxSizeChar=100;
+    char ca1[maxSizeChar];
+    ca1[0]='\0';
+    char ca2[100];
+    cout<< "enter a string:"<< endl;
+    while(cin.getline(ca2,50)){
+        if(ca2[0]=='x' && ca2[1]=='x'){
+            break;
+        }
+        strcat(ca1,ca2);
+        strcat(ca1,"\n");
+    }
+    cout << ca1 << endl;
+
+    string str1;
+    string str2;
+    string str3="xx";
+    cout<< "enter a string:"<< endl;
+    while(getline(cin,str2)){
+        if(str2==str3){
+            break;
+        }
+        str1+=str2+"\n";
+    }
+    cout << str1 << endl;
+    
+
+    return 0;
+}
+/*
+input:
+Hi there!
+My name is Masoud.
+xx
+
+output:
+enter a string:
+Hi there!
+My name is Masoud.
+xx
+Hi there!
+My name is Masoud.
+
+enter a string:
+Hi there!
+My name is Masoud.
+xx
+Hi there!
+My name is Masoud.
+*/
