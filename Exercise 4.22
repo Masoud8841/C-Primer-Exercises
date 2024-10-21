@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+using std::cout;
+using std::endl;
+int main(){
+    const char *cp1="hello";
+    const char *cp2="hello";
+    int cnt1;
+    int cnt2;
+    while (cp1){
+        ++cnt1;
+        ++cp1;
+    } // counts until cp1 becomes NULL
+    while (*cp2){
+        ++cnt2;
+        ++cp2;
+    } // counts until *cp2 becomes Null, i.e., six iterations
+    cout<< cnt1<<", "<<cnt2<<endl; // garbage values since cnt1 and cnt2 are not initialized; 
+    // cnt1 is also random after initialization, since cp1 is used instead of *cp1 for the while-loop condition.
+
+    return 0;
+}
+/*
+*/
