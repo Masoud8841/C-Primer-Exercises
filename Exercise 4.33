@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    size_t vec_size=10;
+    vector<int> ivec(vec_size,1);
+    int arr[vec_size];
+    for(size_t i=0;i!=vec_size;++i){
+        arr[i]=ivec[i];
+        cout<< arr[i]<< " ";
+    }
+    cout << endl;
+    return 0;
+}
+/*
+output:
+1 1 1 1 1 1 1 1 1 1 
+*/
