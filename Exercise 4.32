@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    int arr[]={1,2,3,4,5};
+    vector<int> ivec(arr,arr+5);
+    for(size_t i=0;i!=5;++i){
+        cout<< ivec[i]<< " ";
+    }
+    cout << endl;
+    return 0;
+}
+/*
+output:
+1 2 3 4 5 
+*/
