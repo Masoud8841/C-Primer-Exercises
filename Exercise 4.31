@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <cstring>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
+int main(){
+    string input_string, temp;
+    cout<< "enter your string: "<< endl;
+    while(getline(cin,temp)){
+        input_string+="\n"+temp;
+    }
+    const char *pc=input_string.c_str();
+    cout << pc << endl;
+    return 0;
+}
+/*
+the code can handle any size! one can use cin.getline(char_str,length) to read each line,
+allocate memory dynamically to concatenate the new line with previous ones and delete the allocated memory
+within the right time. The limitation would be the size of each line and truncation happens if the line input is longer.
+input:
+Hi there!
+My name is Masoud.
+What is your name?!
+control+d
+output:
+Hi there!
+My name is Masoud.
+What is your name?!
+*/
