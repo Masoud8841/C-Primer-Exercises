@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    int ival, flag=0;
+    cout<<"enter a sequence of ints:"<<endl;
+    while(cin>>ival){
+        if(ival==42){
+            cout<< "42 is entered!"<<endl;
+            flag=1;
+            break;
+        }
+    }
+    if(flag==0){
+        cout<< "42 did not enter!"<<endl;
+    }
+    return 0;
+}
+/*
+input:
+1
+2
+3
+4
+5
+42
+output:
+42 is entered!
+*/
