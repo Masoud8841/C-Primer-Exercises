@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    int i=0;
+    //if(i=42) is illegal since 42 is a const literal and rvalue!
+    if(i=42){
+        cout << "i is: "<< i << endl;
+    }
+    return 0;
+}
+/*
+output:
+i is: 42
+*/
