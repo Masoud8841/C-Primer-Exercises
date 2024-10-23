@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    int i; double d;
+    d=i=3.5;
+    cout<< "d= "<< d << ", "<< "i= "<<i <<endl;
+    i=d=3.5;
+    cout<< "d= "<< d << ", "<< "i= "<<i <<endl;
+    return 0;
+}
+/*
+d= 3, i= 3
+d= 3.5, i= 3
+*/
