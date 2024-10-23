@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    string line;
+    vector<string> string_vec;
+    cout<< "enter your strings in each line:" << endl;
+    while(getline(cin,line)){
+        string_vec.push_back(line);
+    }
+    const char **pc=new const char*[string_vec.size()];
+    for(vector<string>::size_type i=0;i!=string_vec.size();++i){
+        char *arr=new char[string_vec[i].size()];
+        for(size_t j=0;j!=string_vec[i].size();++j){
+            *(arr+j)=string_vec[i][j];
+            cout<<*(arr+j);
+        }
+        cout<< endl;
+        *(pc+i)=arr;
+    }
+    for(size_t i=0;i!=string_vec.size();++i){
+        delete [] *(pc+i);
+    }
+    delete [] pc;
+
+    return 0;
+}
+/*
+input:
+Hi there!
+My name is Masoud.
+What is your name?
+control+d
+output:
+Hi there!
+My name is Masoud.
+What is your name?
+*/
