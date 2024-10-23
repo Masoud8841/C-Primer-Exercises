@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int *retrieve_pointer(void);
+
+int main(){
+    int *ptr;
+    int ival=100;
+    if((ptr=retrieve_pointer())!=0){ // error, assigning bool to pointer! fixed!
+        cout << "ptr is non-zero" << endl;
+    }
+    if(ival==1024){ // used = instead of == most likely
+        cout<< "ival is 1024"<<endl;
+    }
+    ival+=ival+1; // ival=ival+1 was intended probably but now it is ival=ival+ival+1!
+    cout<< "ival is: "<< ival << endl;
+
+}
+
+int *retrieve_pointer(){
+    return 0;
+}
+/*
+output:
+ival is: 201
+*/
