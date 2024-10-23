@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    int ival;
+    string sval="odd";
+    cout<< "enter an integer:" << endl;
+    cin >> ival;
+    if(ival%2==0){
+        sval="even";
+    }
+    cout<< ival << " is an " << sval << " number."<<endl;
+    return 0;
+}
+/*
+input:
+11
+output:
+11 is an odd number.
+*/
