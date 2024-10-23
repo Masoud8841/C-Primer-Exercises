@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    bitset<30> quiz1("100001111100110011001100110011");
+    cout << "quiz1 is: " << quiz1 << endl;
+    quiz1[27]=1;
+    cout << "quiz1 is: " << quiz1 << endl;
+    quiz1[27]=0;
+    cout << "quiz1 is: " << quiz1 << endl;
+    return 0;
+}
+/*
+output:
+quiz1 is: 100001111100110011001100110011
+quiz1 is: 101001111100110011001100110011
+quiz1 is: 100001111100110011001100110011
+*/
