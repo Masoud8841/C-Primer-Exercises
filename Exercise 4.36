@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    const size_t rows=3, columns=4;
+    int ia[rows][columns]={{1,2,3,4},{5,6,7,8},{4,3,2,1}};
+    for(int (*p)[columns]=ia;p!=ia+rows;++p){
+        for(int *q=*p;q!=*p+columns;++q){
+            cout<< *q <<" ";
+        }
+        cout << endl;
+    }
+    return 0;
+}
+/*
+output:
+1 2 3 4 
+5 6 7 8 
+4 3 2 1 
+*/
