@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    string line;
+    vector<string> string_vec;
+    cout<< "enter your strings in each line:" << endl;
+    while(getline(cin,line)){
+        string_vec.push_back(line);
+    }
+    char **pc=new char*[string_vec.size()];
+    for(vector<string>::size_type i=0;i!=string_vec.size();++i){
+        char *arr=new char[string_vec[i].size()];
+        for(size_t j=0;j!=string_vec[i].size();++j){
+            *(arr+j)=string_vec[i][j];
+        }
+        *(pc+i)=arr;
+    }
+    cout<< "the vector's content are:"<<endl;
+    for(vector<string>::size_type i=0;i!=string_vec.size();++i){
+        cout<< string_vec[i] << endl;
+    }
+    cout<< "the array's content are:"<<endl;
+    for(size_t i=0;i!=string_vec.size();++i){
+        for(size_t j=0;j!=string_vec[i].size();++j){
+            cout<<*(*(pc+i)+j);
+        }
+        cout<<endl;
+    }
+
+    for(size_t i=0;i!=string_vec.size();++i){
+        delete [] *(pc+i);
+    }
+    delete [] pc;
+
+    return 0;
+}
+/*
+input:
+Hi there!
+My name is Masoud.
+What is your name?
+control+d
+output:
+the vector's content are:
+Hi there!
+My name is Masoud.
+What is your name?
+the array's content are:
+Hi there!
+My name is Masoud.
+What is your name?
+*/
