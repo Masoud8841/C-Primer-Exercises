@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    double dval; int ival; int *pi;
+    //dval=ival=pi=0; illegal, cannot asign pointer to int
+    pi=0;
+    dval=ival=0;
+
+    return 0;
+}
+/*
+output:
+
+*/
