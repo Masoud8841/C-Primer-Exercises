@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    unsigned long ul1=3, ul2=7;
+    cout << "ul1 is:   " << bitset<32>(ul1) << endl;
+    cout << "ul2 is:   " << bitset<32>(ul2) << endl;
+    cout << "ul1&ul2:  " << bitset<32>(ul1&ul2) << endl; //bitwise AND
+    cout << "ul1&&ul2: " << bitset<32>(ul1&&ul2) << endl; // bool value, both are non-zero so && returns true!
+    cout << "ul1|ul2:  " << bitset<32>(ul1|ul2) << endl; //bitwise OR
+    cout << "ul1||ul2: " << bitset<32>(ul1||ul2) << endl; // bool value, both are non-zero so || returns true!
+    
+    return 0;
+}
+/*
+output:
+ul1 is:   00000000000000000000000000000011
+ul2 is:   00000000000000000000000000000111
+ul1&ul2:  00000000000000000000000000000011
+ul1&&ul2: 00000000000000000000000000000001
+ul1|ul2:  00000000000000000000000000000111
+ul1||ul2: 00000000000000000000000000000001
+*/
