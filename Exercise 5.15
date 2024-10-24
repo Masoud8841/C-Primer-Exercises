@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int *retrieve_pointer(void);
+
+int main(){
+    int i=100, j,k;
+    cout<<"i is: "<< i << endl;
+    j=++i;
+    cout<< "i is: "<< i <<", j is: "<< j << endl;
+    k=i++;
+    cout<< "i is: "<< i <<", k is: "<< k << endl;
+    return 0;
+
+}
+/*
+output:
+i is: 100
+i is: 101, j is: 101
+i is: 102, k is: 101
+*/
