@@ -1,0 +1,2 @@
+(!prt)==(ptr->next)
+ch = ((buff[(bp++)]) !='\n')
