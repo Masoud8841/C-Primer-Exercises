@@ -1,0 +1,5 @@
+ptr->ival!=0; // (ptr->ival) != 0 , likely correct
+ival != jval < kval; // ival != (jval < kval) likely incorrect, compares jval and kval then checks jval with 0 or 1
+ptr != 0 && *ptr++; //(ptr != 0) && (*(ptr++)), likely correct
+ival++ && ival; // incorrect, ANDs ival with ival
+vec[ival++] <= vec[ival] ; // likely incorrect, not clear if left or right side of <= are evaluated first
