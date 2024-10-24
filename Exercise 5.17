@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    vector<int> ivec;
+    for(int i=10;i!=0;--i){
+        ivec.push_back(i);
+    }
+    vector<int>::iterator iter=ivec.begin();
+    while(iter!=ivec.end()){
+        cout<< *iter++ <<" ";
+    }
+    cout << endl;
+    iter=ivec.begin();
+    while(iter!=ivec.end()){
+        cout<< *++iter <<" ";
+    }
+    cout << endl;
+    return 0;
+
+}
+/*
+output:
+10 9 8 7 6 5 4 3 2 1 \\ prints the vector correctly
+9 8 7 6 5 4 3 2 1 0  \\ skips the first value and reads an element outside of the vector (happended to be zero!).
+*/
