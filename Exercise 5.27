@@ -1,0 +1,21 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    string s="word";
+    string pl=s+(s[s.size()-1]=='s'?"":"s");
+    cout << pl << endl;
+    return 0;
+}
+/*
+output:
+words
+*/
