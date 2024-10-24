@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    vector<string*> spvec;
+    vector<string> svec;
+    cout<< "enter several strings:"<< endl;
+    string line;
+    while(getline(cin,line)){
+        svec.push_back(line);
+    }
+    for(vector<string>::size_type i=0;i!=svec.size();++i){
+        spvec.push_back(&svec[i]);
+    }
+    for(vector<string*>::size_type i=0;i!=spvec.size();++i){
+        cout << *spvec[i]<<endl;
+        cout << "string size is: " << (*spvec[i]).size() << endl;
+        cout << "string size is: " << spvec[i]->size() << endl;
+    }
+
+    return 0;
+}
+/*
+input:
+Hi there!
+This is Masoud.
+What is your name?
+control+d
+
+output:
+Hi there!
+string size is: 9
+string size is: 9
+This is Masoud.
+string size is: 15
+string size is: 15
+What is your name?
+string size is: 18
+string size is: 18
+*/
