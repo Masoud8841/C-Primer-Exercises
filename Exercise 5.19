@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    vector<string> svec;
+    svec.push_back("first element");
+    svec.push_back("");
+    svec.push_back("thirs item");
+    vector<string>::iterator iter=svec.begin();
+    cout<< *iter++ << endl; // increments iter, keeps a copy of past value, dereference the past value! so prints svec[0];
+    //cout<< (*iter)++ << endl; illegal, cannot ++ a string!
+    //cout<< *iter.empty() << endl; illegal, iterator does not have empty member!
+    cout<< iter->empty() << endl; // dereferences iter and checks whether that string is empty or not.
+    //cout<< ++*iter << endl; illegal, cannot increament a string
+    cout<< iter++->empty() << endl; // increments iter, keeps a copy of past value, dereference the past value!
+
+    return 0;
+}
+/*
+output:
+first element
+1
+1
+*/
