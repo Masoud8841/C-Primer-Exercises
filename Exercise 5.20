@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    int i,j;
+    cout<<"enter two inegers:"<<endl;
+    cin >> i >> j;
+    cout << ((i<j)?i:j) <<" is smaller than "<< ((i>j)?i:j) << endl;
+
+    return 0;
+}
+/*
+input:
+2 5
+output:
+2 is smaller than 5
+*/
