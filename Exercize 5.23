@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    int x[10]; int *p=x;
+    cout<< sizeof(x)/sizeof(*p) << endl; // 10 ints = 40 bytes, divided by 4 bytes gives 10 (array size)
+    cout<< sizeof(p)/sizeof(*p) << endl; // 8 bytes pointer divided by 4 bytes gives 2!
+
+    return 0;
+}
+/*
+output:
+10
+2
+*/
