@@ -1,0 +1,8 @@
+float fval;
+if(fval); // float is converted to bool
+double dval;
+int ival;
+char cval;
+dval=fval+ival; int in converted to float, summation is performed and the result is converted from float type to double
+dval+ival+cval // unclear, if evaluation is done left to right then int to double conversion happens, then the first sum, then char to double and the second sum
+// if the order is reversed, char to int, summation, int to double, summation occurs
