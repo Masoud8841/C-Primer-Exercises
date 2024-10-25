@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    char cval; int ival; unsigned int ui;
+    float fval; double dval;
+    cval='a'+3; // char is converted to int, the summation result is converted to char;
+    cout << sizeof('a'+3) <<", "<< sizeof(cval) << endl;
+    fval=ui-ival*1.0; // int converted to double, multiplication is performed, then ui converted to double
+    // then subtraction is performed and result is converted to float
+    cout<< sizeof(ival*1.0)<<", "<< sizeof(ui-ival*1.0)<<", "<< sizeof(fval)<< endl;
+    dval=ui*fval; // ui is converted to float, the result is converted to double
+    cout<< sizeof(ui*fval)<<", "<<sizeof(dval)<< endl;
+    cval=ival+fval+dval; // depends on the order, but int->float and float->double and double->char is one possibility
+    // the second one is float->double, int->double, double->char
+    cout<< sizeof(ival+fval+dval) <<", "<< sizeof(cval)<<endl;
+    return 0;
+}
+/*
+output:
+4, 1
+8, 8, 4
+4, 8
+8, 1
+*/
