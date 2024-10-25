@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    int ival; double dval;
+    const string *ps; char *pc; void *pv;
+    
+    pv=(void*) ps;
+    pv=reinterpret_cast<void*>(const_cast<string*>(ps));
+    ival=int (*pc);
+    ival=static_cast<int>(*pc);
+    pv=&dval;
+    pv=reinterpret_cast<void*>(&dval);
+    pc=(char*) pv;
+    pc=reinterpret_cast<char*>(pv);
+
+    return 0;
+}
+/*
+*/
