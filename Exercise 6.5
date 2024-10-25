@@ -1,0 +1,18 @@
+(a)
+if(ival1!=ival2)
+  ival1=ival2; // missing ';'
+else ival1=ival2=0;
+(b)
+if(ival<minval){ // add curly braces to assign occurs=1 within the if condition.
+  minval=ival;
+  occurs=1;
+  }
+(c)
+if (int ival=get_value())
+  cout<< "ival= " << ival << endl;
+if(!ival) // ival is not defined! use int ival; before the first if condition instead!
+  cout<< "ival=0\n"; // use <<endl as well!
+(d)
+if (ival=0) // assuming ival is defined before, use ==
+  ival=get_value();
+
