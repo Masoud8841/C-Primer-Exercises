@@ -1,0 +1,38 @@
+(a) switch (ival){
+        case 'a': aCnt++; break; //break was missing
+        case 'e': eCnt++; break; //break was missing
+        default: iouCnt++; break; //added break but it is not necessary
+}
+(b) switch (ival) {
+      case 1:
+        int ix=get_value();
+        ivec[ix]=ival;
+        break;
+      default:
+        ix=ivec.size()-1; // ix is not defined; one can define int ix before switch or use "ivec[ivec.size()-1]=ival" instead.
+        ivec[ix]=ival;
+}
+(c) switch (ival){
+      case 1: case 3: case 5: case 7: case 9: // corrected the syntax
+        oddCnt++;
+        break;
+      case 2: case 4: case 6: case 8 : case 10: // corrected the syntax
+        evenCnt++;
+        break;
+      default: // added default, not necessary though
+        break;
+}
+(d) int ival=512, jval=1024, kval=4096; // missing comma
+    int bufsize;
+    ...
+    switch(swt){ // default can be added but it is not necessary
+      case ival:
+        bufsize=ival*sizeof(int);
+        break;
+      case jval:
+        bufsize=jval*sizeof(int);
+        break;
+      case kval;
+        bufsize=kval*sizeof(int);
+        break;
+    }
