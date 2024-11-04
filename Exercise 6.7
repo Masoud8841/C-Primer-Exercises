@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    string someTxt, line;
+    cout << "enter some text" << endl;
+    while(getline(cin,line)){
+        someTxt+='\n'+line;
+    }
+    int vowelCnt=0;
+    for(string::size_type i=0; i!=someTxt.size(); i++){
+        switch (tolower(someTxt[i]))
+        {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+            ++vowelCnt;
+            break;
+        default:
+            break;
+        }
+    }
+    cout<< "Your text has " << vowelCnt <<" number of vowels!" << endl;
+    return 0;
+}
+/*
+input:
+
+In You Can Be a Stock Market Genius, Joel Greenblatt begins by providing a comprehensive understanding of the stock market, including its history, its function, and the different types of securities available.
+He introduces the concept of special situations investing, a strategy that involves investing in situations that are not fully understood or appreciated by the market.
+Greenblatt explains that while special situations are often overlooked by traditional investors, they present unique opportunities for significant profits.
+He also highlights the importance of thorough research and analysis in identifying and capitalizing on these opportunities.
+control+d
+
+output:
+Your text has 213 number of vowels!
+*/
