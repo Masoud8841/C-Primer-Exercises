@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    string str1, str2;
+    do{
+        cout<<"enter two strings to compare: [type \"exit exit\" to stop]"<<endl;
+        cin>>str1 >>str2;
+        if(str1==str2 && str1=="exit"){
+            break;
+        }
+        if(cin){
+            if(str1<str2){
+                cout<< str1<<" is less than "<< str2 <<endl;
+            }
+            else if(str1>str2){
+                cout<< str2<<" is less than "<< str1 <<endl;
+            }
+            else{
+                cout<< "same strings!"<<endl;
+            }
+        }
+    } while(cin);
+    return 0;
+}
+/*
+input:
+hi there!
+hi hi
+exit exit
+
+output:
+enter two strings to compare: [type "exit exit" to stop]
+hi there!
+hi is less than there!
+enter two strings to compare: [type "exit exit" to stop]
+hi hi
+same strings!
+enter two strings to compare: [type "exit exit" to stop]
+exit exit
+*/
