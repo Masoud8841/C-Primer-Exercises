@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    string word, bufword=" ", maxWord;
+    int cntRepeats=0, maxRepeats=0;
+    cout<< "type your words:"<<endl;
+    while(cin>>word){
+        if(bufword==word){
+            ++cntRepeats;
+            if(cntRepeats>maxRepeats){
+                maxWord=word;
+                maxRepeats=cntRepeats;
+            }
+        }
+        else{
+            cntRepeats=1;
+            bufword=word;
+        }
+    }
+    if(maxRepeats<2){
+        cout<< "No word was repeated"<< endl;
+    }
+    else{
+        cout<< "Word "<< "\"" << maxWord <<"\""<<" was repeated "<< maxRepeats << " times."<<endl;
+    }
+
+    return 0;
+}
+/*
+intput: 
+how, now now now brown cow cow now
+control+d
+
+output:
+Word "now" was repeated 3 times.
+*/
