@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+int* find_a_value(void);
+bool find(string);
+string get_next_word(void);
+int main(){
+    string bufString, word;
+    vector<int> ivec;
+    int* ptr;
+    cout<< "type two strings" << endl;
+    while(cin >> bufString >> word){
+        cout<< bufString <<", "<< word << endl;
+    }
+    // the code works; in order to break the while condition, control+d can be used as input or some keyword
+    // as input and break command in the body based on the recieved word. 
+    //while(vector<int>::iterator iter!=ivec.end()){} , iter is not initialized
+    while(ptr=0){ // should be ==, since = means assign 0 to ptr and then evalue it -> flase -> breaks the while!
+        cout<<"loop executed!"<<endl;
+        ptr=find_a_value();    
+    }
+    bool status;
+    while(status=find(word)){
+        word=get_next_word();
+    }
+    if(!status) //status not defined outside of the while body
+        cout<< "didn't find any words!" << endl;
+
+    return 0;
+}
+
+int* find_a_value(){
+    return NULL;
+}
+bool find(string word){
+    return false;
+}
+string get_next_word(){
+    return "hi!";
+}
+/*
+
+*/
