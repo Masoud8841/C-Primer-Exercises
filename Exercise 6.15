@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    vector<int> ivec;
+    ivec.push_back(0);
+    ivec.push_back(1);
+    ivec.push_back(2);
+    ivec.push_back(3);
+    for(vector<int>::size_type i=0;i!=ivec.size();++i){
+        cout<< ivec[i]<<" ";
+    }
+    cout<< endl;
+    vector<int>::size_type i=0;
+    while(i!=ivec.size()){
+        cout<< ivec[i]<<" ";
+        ++i;
+    }
+    cout << endl;
+
+    string keyWord;
+    cout<< "enter the keyword:"<<endl;
+    while(cin>> keyWord){
+        if(keyWord=="exit"){
+            cout<< "exit was found!"<< endl;
+            break;
+        }
+        else{
+            cout<< "enter the keyword:"<<endl;
+        }
+    }
+    cout<< "enter the keyword:"<<endl;
+    for(;cin>>keyWord;){
+       if(keyWord=="exit"){
+            cout<< "exit was found!"<< endl;
+            break;
+        } 
+        else{
+            cout<< "enter the keyword:"<<endl;
+        }
+    }
+
+
+    return 0;
+}
+// for and while are similar, I prefer to have "while" if I must!
+/*
+input:
+hi
+there!
+exit
+hi
+there!
+exit
+
+output:
+0 1 2 3 
+0 1 2 3 
+exit was found!
+exit was found!
+*/
