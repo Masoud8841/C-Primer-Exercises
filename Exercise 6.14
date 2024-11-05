@@ -1,0 +1,60 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    const int size=5;
+    int ia[size];
+    int sz=3;
+
+    for(int *ptr=ia, ix=0;ix!=size && ptr!=ia+size;++ix, ++ptr){
+        cout<< ix <<", "<< ptr << endl;
+    }
+    // &ia is a double pointer! it should be int *ptr=ia;
+    for(;;){
+        if(false) return 0;
+        cout<< "\n" << "this line is executed once!"<< endl;
+        break;
+    }
+    // infinite loop unless broken within! return 0 used instead since I use int main()
+    int ix;
+    for(ix=0;ix!=sz;++ix){
+        cout<<"some code" << endl;
+    }
+    if(ix!=sz){
+        cout<< "ix!=sz is true!"<<endl;
+    }
+    // ix not defined after for; defined it earlier to fix this.
+    ix=0;
+    for(;ix!=sz;++ix){
+        cout<< "some other code!"<< endl;
+    }
+    // added ; for initialization statement, NULL in this case. Also initialized ix.
+    for(int ix2=0;ix2!=sz;++ix2, ++sz){
+        cout<< "infinite loop since sz is increasing too!" << endl;
+        break;
+    }
+    return 0;
+}
+/*
+output:
+0, 0x16b773144
+1, 0x16b773148
+2, 0x16b77314c
+3, 0x16b773150
+4, 0x16b773154
+
+this line is executed once!
+some code
+some code
+some code
+some other code!
+some other code!
+some other code!
+infinite loop since sz is increasing too!
+*/
