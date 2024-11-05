@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    vector<int> ivec1, ivec2;
+    ivec1.push_back(0); ivec1.push_back(1); ivec1.push_back(1); ivec1.push_back(2);
+    ivec2.push_back(0); ivec2.push_back(1); ivec2.push_back(1); ivec2.push_back(2); 
+    ivec2.push_back(3); ivec2.push_back(5); ivec2.push_back(8);
+
+    vector<int>::size_type i=0, size_vec=ivec1.size();
+    if(size_vec>ivec2.size()){
+        size_vec=ivec2.size();
+    }
+    for(;i!=size_vec;++i){
+        if(ivec1[i]!=ivec2[i]){
+            cout<< "not true!"<<endl;
+            return 0;
+        }
+    }
+    cout<< "true!"<<endl;
+    return 0;
+}
+/*
+output:
+true!
+*/
