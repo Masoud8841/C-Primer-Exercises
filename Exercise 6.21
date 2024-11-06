@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    string str1, str2;
+    cout<<"enter your words:"<<endl;
+    while(cin>>str1 && !str1.empty()){
+        if(str1=="exit")
+            break;
+        if(str1[0]<'A' || str1[0]>'Z')
+            continue;
+        if(str1==str2){
+            cout<< "word \""<< str1 << "\" is repeated."<<endl;
+            break;
+        }
+        str2=str1;
+    }
+    if(str2!=str1)
+        cout<< "No word was repeated!"<<endl;
+    return 0;
+}
+/*
+input1:
+hi there! this is me me Yes Yes
+input2:
+hi there! this is me! exit
+output1:
+word "Yes" is repeated.
+output2:
+No word was repeated!
+*/
