@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include<bitset>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::bitset;
+
+int main(){
+    unsigned long variable;
+    bitset<70> bVariable;
+    bVariable.set();
+    variable=bVariable.to_ulong();
+    cout << variable << endl;
+    return 0;
+}
+/*
+output:
+libc++abi: terminating due to uncaught exception of type std::overflow_error: bitset to_ulong overflow error
+*/
