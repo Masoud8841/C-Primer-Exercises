@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+double power_cal_p(int, int);
+int main(){
+    cout<< "enter two integers:" << endl;
+    int i, j;
+    cin>>i >>j ;
+    double cal=power_cal_p(i,j);
+    if(i!=0 || j!=0)
+        cout<<i <<" to the power of "<< j <<" is: "<< cal << endl;
+    return 0;
+}
+double power_cal_p(int a, int b){
+    if(a==0 && b==0){
+        std::cerr << "zero to the power of zero is undefined!"<<endl;
+        return 0;
+    }
+    else if(a==0){
+        return 0;
+    }
+    else if(b==0){
+        return 1;
+    }
+
+    int sign_val1=1, sign_val2=1;
+    if(a<0){
+        sign_val1=-1;
+        a=-a;
+    }
+    if(b<0){
+        sign_val2=-1;
+        b=-b;
+    }
+    double cal_val=1;
+    for(int i=0; i<b;++i){
+        cal_val*=a;
+    }
+    if(sign_val2<0){
+        cal_val=1/cal_val;
+    }
+    return sign_val1*cal_val;
+}
+/*
+input:
+0 0
+5 0
+0 5
+2 3
+2 -3
+-2 3
+-2 -3
+output:
+zero to the power of zero is undefined!
+5 to the power of 0 is: 1
+5 to the power of 0 is: 0
+2 to the power of 3 is: 8
+2 to the power of -3 is: 0.125
+-2 to the power of 3 is: -8
+-2 to the power of -3 is: -0.125
+
+*/
