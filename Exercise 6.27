@@ -1,0 +1,7 @@
+string s;
+while (cin >> s && s!=sought){}
+assert(cin);
+//process s
+// the code runs and reads strings into s, as long as s is not the same as the value in sought variable.
+// when the program after the while is run, assert gives an error if the while condition was false due to failure in cin,
+// else the remainder of the code is executed
