@@ -1,0 +1,6 @@
+string s;
+while (cin>>s){
+  assert(cin);
+  // process s
+}
+// the code terminates ("Assertion failed:...") if cin has failed. This is not a good use since cin is already checked as the while condition
