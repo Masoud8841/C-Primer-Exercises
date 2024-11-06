@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+int absVal(int x);
+int main(){
+    cout<< "enter an integer: "<<endl;
+    int x;
+    cin >> x;
+    cout<< "absolute value of "<< x <<" is: "<< absVal(x) << endl;
+    return 0;
+}
+int absVal(int x){
+    if(x<0){
+        return -x;
+    }
+    return x;
+}  
+/*
+input:
+-3
+3
+0
+
+output:
+absolute value of -3 is: 3
+absolute value of 3 is: 3
+absolute value of 0 is: 0
+
+*/
