@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+int main(){
+    vector<int> ivec;
+    ivec.push_back(1); ivec.push_back(2); ivec.push_back(3); ivec.push_back(4);
+    vector<int>::iterator iter=ivec.begin();
+    int value=4;
+    while(iter!=ivec.end() && value!=*iter++){
+
+    }
+    if(iter!=ivec.end() || (!(ivec.empty()) && value==*(--iter)))
+        cout<< "ivec contains value: "<< value << endl;
+    else
+        cout<< "ivec does not contains value: "<< value << endl;
+    return 0;
+}
+/*
+output:
+ivec contains value: 4
+*/
