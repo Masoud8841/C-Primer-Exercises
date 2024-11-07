@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+int max_val(int,const int*);
+int main(){
+    int val1, val2;
+    cout<<"enter two integers:"<<endl;
+    cin >> val1 >> val2;
+    cout<< max_val(val1, &val2) << " is larger!" << endl;
+    return 0;
+}
+
+int max_val(int x, const int *ip){
+    if(x<*ip){
+        x=*ip;
+    }
+    return x;
+}
+/*
+input:
+2 5
+output:
+5 is larger!
+*/
