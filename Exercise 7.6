@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+void swap_val_test(int *,int *);
+int main(){
+    int val1, val2;
+    cout<<"enter two integers:"<<endl;
+    cin >> val1 >> val2;
+    cout<< "val1: "<< val1<<", val2: "<<val2 <<endl;
+    swap_val_test(&val1,&val2);
+    cout<< "val1: "<< val1<<", val2: "<<val2 <<endl;
+    return 0;
+}
+
+void swap_val_test(int *ip1, int *ip2){
+    int temp=*ip1;
+    *ip1=*ip2;
+    *ip2=temp;
+    return;
+}
+/*
+input:
+2 5
+output:
+val1: 2, val2: 5
+val1: 5, val2: 2
+*/
