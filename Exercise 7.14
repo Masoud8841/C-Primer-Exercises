@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+double sum_1(vector<double>::const_iterator, vector<double>::const_iterator);
+int main(){
+    vector<double> dvec;
+    dvec.push_back(1);dvec.push_back(2);dvec.push_back(3);dvec.push_back(4);dvec.push_back(5);
+    dvec.push_back(6);dvec.push_back(7);dvec.push_back(8);dvec.push_back(9);dvec.push_back(10.5);
+    cout<< "the sum is: "<< sum_1(dvec.begin(),dvec.end())<<endl;
+    return 0;
+}
+double sum_1(vector<double>::const_iterator beg, vector<double>::const_iterator end){
+    double sum=0;
+    while(beg!=end)
+        sum+=*beg++;
+    return sum;
+}
+
+
+/*
+output:
+the sum is: 55.5
+*/
