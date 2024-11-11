@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+int sum_1(int (&matrix)[10]);
+int sum_2(int *, int *);
+int sum_3(int *, size_t);
+int main(){
+    int arr[]={1,2,3,4,5,6,7,8,9,10};
+    cout<< "the sum is: "<< sum_1(arr)<<endl;
+    cout<< "the sum is: "<< sum_2(arr, arr+sizeof(arr)/sizeof(arr[0]))<<endl;
+    cout<< "the sum is: "<< sum_3(arr,sizeof(arr)/sizeof(arr[0]))<<endl;
+    return 0;
+}
+int sum_1(int (&arr)[10]){
+    int sum=0;
+    for(int i=0;i<10;++i){
+        sum+=arr[i];
+    }
+    return sum;
+}
+int sum_2(int* beg, int *end){
+    int sum=0;
+    while(beg!=end){
+        sum+=*beg++;
+    }
+    return sum;
+}
+int sum_3(int* beg, size_t size){
+    int sum=0;
+    for(size_t i=0;i!=size;++i){
+        sum+=*beg++;
+    }
+    return sum;
+}
+
+/*
+output:
+the sum is: 55
+the sum is: 55
+the sum is: 55
+*/
