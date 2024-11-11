@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+bool test(const string &s){return s.empty();}
+int main(){
+    string s1, s2="Hi!";
+    const string s3="Hi!";
+    cout<< test(s1) << endl;
+    cout<< test(s2) << endl;
+    cout<< test(s3) << endl;
+    cout<< test("Hi!") << endl;
+}
+
+
+/*
+output:
+1
+0
+0
+0
+*/
