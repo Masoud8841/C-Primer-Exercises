@@ -1,0 +1,3 @@
+a reference argument can be used as the object itself; easier to pass and work with
+a pointer to an object needs to be extracted and also used using derefence operator; however, if the pointer is available and not the object then
+passing the pointer can be easier!
