@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+vector<int>::const_iterator find_val(
+    vector<int>::const_iterator beg,
+    vector<int>::const_iterator end,
+    int value,
+    vector<int>::size_type occurs) //removes &, no ref argument
+    {
+        vector<int>::const_iterator res_iter=end;
+        occurs=0;
+        for(;beg!=end;++beg)
+            if(*beg==value){
+                if(res_iter==end)
+                    res_iter=beg;
+                ++occurs;
+            }
+        return res_iter;
+    }
+int main(){
+    vector<int> ivec;
+    int value=2;
+    ivec.push_back(1);ivec.push_back(2);ivec.push_back(3);ivec.push_back(2);ivec.push_back(1);ivec.push_back(2);
+    vector<int>::size_type ctr=0;
+    vector<int>::const_iterator it=ivec.end();
+    it=find_val(ivec.begin(), ivec.end(), value, ctr);
+    cout<< "value "<< value<<" has occured: "<<ctr<<" times."<<endl;
+    cout<< "the iterator value is: ivec.begin()+"<<it-ivec.begin()<<endl;
+    return 0;
+}
+
+
+/*
+output:
+value 2 has occured: 0 times.
+the iterator value is: ivec.begin()+1
+*/
+// iterator is currect but ctr is not updated through occurs!
