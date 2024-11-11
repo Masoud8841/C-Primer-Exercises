@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+int main(int argc, char *argv[]){
+    for(int i=0;i!=argc;++i){
+        cout<<"argument "<<i<<" is: "<<argv[i]<<endl;
+    }
+    return 0;
+}
+
+
+/*
+input:
+./Primer hello there we have some arguments here!
+
+output:
+argument 0 is: ./Primer
+argument 1 is: hello
+argument 2 is: there
+argument 3 is: we
+argument 4 is: have
+argument 5 is: some
+argument 6 is: arguments
+argument 7 is: here!
+*/
