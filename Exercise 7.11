@@ -1,0 +1,2 @@
+argument of a function should be const whenever it does not need to be changed. 
+const gives more flexibility and can accept variables, rvalues, consts, and literals
