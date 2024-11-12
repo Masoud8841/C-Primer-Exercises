@@ -1,0 +1,8 @@
+void calc(double x){
+  static int count=0;
+  double y=2.5;
+  return x/y;
+}
+// in above, x is a parameter, it is local here but it can be a reference to a variable defined outside of the function
+// y is a local variable and will be destroyed after the call is over
+// count is defined the first time the function is called and persists in the following calls, it keeps its value as well
