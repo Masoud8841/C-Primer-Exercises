@@ -1,0 +1,24 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+string make_plural(string &s1, string s2="s");
+int main(){
+    string s1="success", s2="failure";
+    cout<< make_plural(s1,"es")<<endl;
+    cout<< make_plural(s2)<<endl;
+    return 0;
+}
+string make_plural(string &s1, string s2){
+    return s1+s2;
+}
+
+/*
+output:
+successes
+failures
+*/
