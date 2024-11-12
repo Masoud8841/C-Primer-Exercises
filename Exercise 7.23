@@ -1,0 +1,8 @@
+double calc(double);
+calc(23.4,55.1); //error: calc has one input argument
+calc(66); //OK
+int count(const string &, char);
+count("abcd",'a'); //OK
+int sum(vector<int>::iterator, vector<int>::iterator, int);
+vector<int> vec(10);
+sum(vec.begin(),vec.end(),3.8); //warning for conversion of double to int but no error
