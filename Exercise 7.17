@@ -1,0 +1,2 @@
+return a reference: it is valid when the ourput is a reference type and the return does not refer to a local/temporary object
+return const reference: when the return is not used as an lvalue and also the above description 
