@@ -1,0 +1,3 @@
+if(val!=0) is used instead of if(val>1) two things can happen:
+n>0 then one extra recursion happens and the result is multiplied by 1 -> still correct
+n<0 then an infinite recursion happens!
