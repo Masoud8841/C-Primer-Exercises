@@ -1,0 +1,7 @@
+string &processText(){
+  string text;
+  while(cin >> text){/*...*/}
+  // ...
+  return text;
+}
+// return is a temprary variable and it points to an empty chunck of memory when the function returns a value
