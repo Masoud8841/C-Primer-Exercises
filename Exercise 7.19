@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+int &get(int *, int);
+int main(){
+    int ia[10];
+    for(int i=0;i!=10;++i){
+        get(ia,i)=i;
+        cout<<"ia["<<i<<"]= "<<ia[i] << endl;
+    }
+    return 0;
+}
+
+int &get(int *arry, int index){ return arry[index];}
+/*
+output:
+ia[0]= 0
+ia[1]= 1
+ia[2]= 2
+ia[3]= 3
+ia[4]= 4
+ia[5]= 5
+ia[6]= 6
+ia[7]= 7
+ia[8]= 8
+ia[9]= 9
+*/
+//since get() returns a reference it is an lvalue; the return value is not a temporary object so the program works
