@@ -1,0 +1,4 @@
+char *init(int ht, int wd=80, char bckgrnd=' ');
+init(); //error, ht has no default value
+init(24,10); //OK
+init(14,'*'); // OK but probable mistake by programmer, the intent is likely init(14,80,'*');
