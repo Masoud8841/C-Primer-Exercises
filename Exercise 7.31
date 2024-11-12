@@ -18,13 +18,7 @@ class Sales_item{
             units_sold+=units;
             revenue+=revenue;
         }
-        void print_item() const
-        {
-            cout<< isbn<<" "<< units_sold<<" "<< revenue << endl;
-            if(units_sold>0){
-                cout<< "average price: "<< revenue/units_sold << endl;
-            }
-        }
+        void print_item() const;
         Sales_item(): units_sold(0), revenue(0) {}
         Sales_item(const string isbn_new, unsigned units, double rev):
             isbn(isbn_new), units_sold(units), revenue(rev){}
@@ -64,7 +58,13 @@ int main(){
     }
     return 0;
 }
-
+void Sales_item::print_item() const
+    {
+            cout<< isbn<<" "<< units_sold<<" "<< revenue << endl;
+            if(units_sold>0){
+                cout<< "average price: "<< revenue/units_sold << endl;
+            }
+    }
 
 /*
 input:
