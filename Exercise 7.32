@@ -1,0 +1,61 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+#include "Sales_item_7_32.cpp"
+
+int main(){
+    cout<<"enter new sales: (isbn units_sold revenue) or (exit)"<<endl;
+    string isbn;
+    int units_sold;
+    double revenue;
+    bool new_isbn=true;
+    vector<Sales_item> sales_vec;
+    while(cin>>isbn){
+        if (isbn=="exit"){
+            break;
+        }
+        cin>> units_sold >> revenue;
+        Sales_item temp_item(isbn,units_sold,revenue);
+        new_isbn=true;
+        for(vector<Sales_item>::iterator iter=sales_vec.begin();iter!=sales_vec.end();++iter){
+            if(iter->same_isbn(temp_item)){
+                iter->add_units(units_sold,revenue);
+                new_isbn=false;
+                break;
+            }
+        }
+        if(new_isbn){
+            sales_vec.push_back(temp_item);
+        }
+    }
+    cout<<"your sold books are:"<<endl;
+    for(vector<Sales_item>::iterator iter=sales_vec.begin();iter!=sales_vec.end();++iter){
+        iter->print_item();
+    }
+    return 0;
+}
+
+/*
+input:
+0-201-70353-X 4 24.99
+0-201-70354-X 6 17.99
+0-201-70355-X 7 38.99
+0-201-70353-X 13 104.55
+0-201-70354-X 2 8.55
+exit
+
+output:
+your sold books are:
+0-201-70353-X 17 49.98
+average price: 2.94
+0-201-70354-X 8 35.98
+average price: 4.4975
+0-201-70355-X 7 38.99
+average price: 5.57
+*/
