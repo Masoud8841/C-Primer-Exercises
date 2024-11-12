@@ -1,0 +1,2 @@
+inline bool eq(const BigInt&, const BigInt&){...} // in header since this is like a prototype, same argument names that are ignored, and definition needs to be available 
+void putValues(int *arr, int size); // this is a definition and should be in program text not header
