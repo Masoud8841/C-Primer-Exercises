@@ -1,0 +1,8 @@
+int calc(int, int);
+int calc(const int&, const int&); // OK, new argument list as two references are used
+
+int calc(char*,char*);
+int calc(const char*, const char*);//OK, new arguments are pointers to consts
+
+int calc(char*,char*);
+int calc(char *const, char *const); //error-> redefinition: const pointers are treated the same as pointers
