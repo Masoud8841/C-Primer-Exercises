@@ -1,0 +1,70 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+class Sales_item{
+    public:
+        bool same_isbn(const Sales_item &rhs) const
+        {
+            return isbn==rhs.isbn;
+        }
+        void add_items(const Sales_item &rhs){
+            if(same_isbn(rhs)){
+                add_units(rhs.units_sold,rhs.revenue);
+                print_item();
+            }
+            else{
+                cout<<"items have different isbns:"<<endl;
+                cout<<isbn<<endl;
+                cout<<rhs.isbn<<endl;
+            }
+        }
+        void add_units(unsigned units, double rev)
+        {
+            units_sold+=units;
+            revenue+=revenue;
+        }
+        void print_item() const;
+        Sales_item(): units_sold(0), revenue(0) {}
+        Sales_item(const string isbn_new, unsigned units, double rev):
+            isbn(isbn_new), units_sold(units), revenue(rev){}
+    private:
+        string isbn;
+        unsigned units_sold;
+        double revenue;
+};
+int main(){
+    Sales_item temp_item1("0-201-70353-X",4,24.99),
+               temp_item2("0-201-70354-X",6,17.99),
+               temp_item3("0-201-70353-X",13,104.55);
+    cout<<"first sum:"<<endl;
+    temp_item1.add_items(temp_item2);
+    cout<<endl<<"second sum:"<<endl;
+    temp_item1.add_items(temp_item3);
+    return 0;
+}
+void Sales_item::print_item() const
+    {
+            cout<< isbn<<" "<< units_sold<<" "<< revenue << endl;
+            if(units_sold>0){
+                cout<< "average price: "<< revenue/units_sold << endl;
+            }
+    }
+
+/*
+output:
+
+first sum:
+items have different isbns:
+0-201-70353-X
+0-201-70354-X
+
+second sum:
+0-201-70353-X 17 49.98
+average price: 2.94
+*/
