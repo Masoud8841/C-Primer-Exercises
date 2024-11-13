@@ -1,0 +1,8 @@
+int calc(int, int);
+int calc(const int, const int); // error: same argument list, as above!
+
+int get();
+double get(); // error: same argument list, as above!
+
+int *reset(int *);
+double *reset(double *);//OK, different argument type
