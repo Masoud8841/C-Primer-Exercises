@@ -1,0 +1,3 @@
+enum Stat {Fail, Pass};
+void test(Stat);
+test(0); //error: test(int) is not compatible with test(enum)
