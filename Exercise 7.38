@@ -1,0 +1,7 @@
+void manip(int, int);
+double dobj;
+
+manip('a', 'z'); // 2, match through promotions
+manip(55.4, dobj); // 3, match through conversions
+
+
