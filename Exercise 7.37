@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+void f(){
+    cout<<"void input"<<endl;
+}
+void f(int i){
+    cout<<"int input: "<<i <<endl;
+}
+void f(int i, int j){
+    cout<< "two ints: "<<i<<", "<<j<<endl;
+}
+void f(double x, double y=3.14){
+    cout<<"two doubles: "<<x<<", "<<y<<endl;
+}
+
+int main(){
+    //f(2.56,42); // viable: f(int,int) , f(double, double) -> ambiguous since input is (double,int)
+    f(42); // viable: f(int) , f(double, double) -> f(int) is the best match
+    f(42,0); // viable: f(int,int) , f(double, double) -> f(int , int) is the best match
+    f(2.56,3.14); // viable: f(int,int) , f(double, double) ->  f(double, double) is the best match
+    f(2.56); // viable: f(int) , f(double, double) -> f(double, double) is the best match
+    return 0;
+}
+
+/*
+output:
+
+int input: 42
+two ints: 42, 0
+two doubles: 2.56, 3.14
+two doubles: 2.56, 3.14
+
+*/
