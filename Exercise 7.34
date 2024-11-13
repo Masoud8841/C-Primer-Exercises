@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+
+void error(const string &text, int index, int upperBound){
+    cout<<text<<endl;
+    cout<< "index: "<< index <<", "<<"upperbound: "<<upperBound<<endl;
+}
+void error(const string &text){
+    cout<<text<<endl;
+}
+void error(const string &text, char selecVal){
+    cout<<text<<endl;
+    cout<<"selected value: "<< selecVal << endl;
+}
+
+int main(){
+    int index=13, upperBounds=10;
+    char selecVal='W';
+    error("Subscript out of bounds: ",index,upperBounds);
+    error("Division by zero!");
+    error("Invalid selection",selecVal);
+
+    return 0;
+}
+
+/*
+output:
+Subscript out of bounds: 
+index: 13, upperbound: 10
+Division by zero!
+Invalid selection
+selected value: W
+
+*/
