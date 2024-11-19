@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::istream;
+using std::ifstream;
+
+istream &readFun(istream &);
+
+ifstream &open_file(ifstream &in, const string &file){
+    in.close();
+    in.clear();
+    in.open(file.c_str());
+    return in;
+}
+
+int main(){
+    ifstream input;
+    open_file(input,"Sales_item_7_32.cpp");
+    readFun(input);
+    if(cin.eof()){
+        cout<<"EOF flag is set!"<<endl;
+    }
+    else{
+        cout<<"EOF flag is clear!" << endl;
+    }
+    return 0;
+}
+istream &readFun(istream &istm){
+    vector<string> svec;
+    string line;
+    istream::iostate current_state;
+    while(getline(istm,line), !istm.eof()){
+        svec.push_back(line);
+    }
+    for(vector<string>::size_type i=0;i!=svec.size();++i){
+        cout<< svec[i]<< endl;
+    }
+    current_state=istm.rdstate();
+    istm.clear(~istream::eofbit);
+    return istm;
+};
+/*
+output:
+#include "Sales_item_7_32.h"
+void Sales_item::print_item() const
+    {
+            cout<< isbn<<" "<< units_sold<<" "<< revenue << endl;
+            if(units_sold>0){
+                cout<< "average price: "<< revenue/units_sold << endl;
+            }
+EOF flag is clear!
+
+*/
