@@ -1,0 +1,36 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::istream;
+using std::ifstream;
+
+int main(){
+    vector<string> linesVec;
+    string line;
+    ifstream input("Sales_item_7_32.cpp");
+    while(getline(input,line))
+        linesVec.push_back(line);
+    for(vector<string>::size_type ix=0;ix!=linesVec.size();++ix)
+        cout<< linesVec[ix]<< endl;
+    input.close();
+    input.clear();
+    return 0;
+}
+/*
+output:
+
+#include "Sales_item_7_32.h"
+void Sales_item::print_item() const
+    {
+            cout<< isbn<<" "<< units_sold<<" "<< revenue << endl;
+            if(units_sold>0){
+                cout<< "average price: "<< revenue/units_sold << endl;
+            }
+    }
+*/
