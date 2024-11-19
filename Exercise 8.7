@@ -41,6 +41,8 @@ int main(){
         input.open(it->c_str());
         if(!input){
              std::cerr<< "cannot read file: "<< it->c_str() <<"\n"<<endl;
+             input.close();
+            input.clear();
              ++it;
              continue;
         }
