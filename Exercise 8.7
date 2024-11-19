@@ -1,0 +1,78 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::istream;
+using std::ifstream;
+
+int main(){
+    vector<string> files;
+    files.push_back("Sales_item_7_32.cpp");
+    files.push_back("Sales_item_7_30.cpp");
+    files.push_back("Sales_item_7_32.cpp");
+    string line;
+    vector<string>::iterator it=files.begin();
+    while(it!=files.end()){
+        ifstream input(it->c_str());
+        if(!input){
+             std::cerr<< "cannot read file: "<< it->c_str() <<"\n"<<endl;
+             ++it;
+             continue;
+        }
+        cout<<it->c_str()<<": "<<endl;
+        int word_cnt=0;
+        while(input >> line)
+            ++word_cnt;
+        cout<<"number of words: "<< word_cnt << "\n" << endl ;
+        ++it;
+    }
+
+    // part two
+    cout<< "part two:"<<"\n"<<endl;
+
+    ifstream input;
+    it=files.begin();
+    while(it!=files.end()){
+        input.open(it->c_str());
+        if(!input){
+             std::cerr<< "cannot read file: "<< it->c_str() <<"\n"<<endl;
+             ++it;
+             continue;
+        }
+        cout<<it->c_str()<<": "<<endl;
+        int word_cnt=0;
+        while(input >> line)
+            ++word_cnt;
+        cout<<"number of words: "<< word_cnt << "\n" << endl ;
+        input.close();
+        input.clear();
+        ++it;
+    }
+    return 0;
+}
+/*
+output:
+Sales_item_7_32.cpp: 
+number of words: 24
+
+cannot read file: Sales_item_7_30.cpp
+
+Sales_item_7_32.cpp: 
+number of words: 24
+
+part two:
+
+Sales_item_7_32.cpp: 
+number of words: 24
+
+cannot read file: Sales_item_7_30.cpp
+
+Sales_item_7_32.cpp: 
+number of words: 24
+
+*/
