@@ -1,0 +1,34 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::istream;
+using std::ifstream;
+
+ifstream &open_file(ifstream &in, const string &file){
+    //in.close();
+    in.clear();
+    in.open(file.c_str());
+    return in;
+}
+int main(){
+    ifstream input;
+    string s;
+    input.open("Sales_item_7_32.cpp");
+    while(input>>s){};
+    open_file(input,"Sales_item_7_32.h");
+    if(!input)
+        std::cerr<<"failed to open the file" << endl;
+    else
+        cout<<"the file is opened successfully"<<endl;
+    return 0;
+}
+/*
+output:
+failed to open the file
+*/
