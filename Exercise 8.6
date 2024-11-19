@@ -30,7 +30,6 @@ int main(){
 istream &readFun(istream &istm){
     vector<string> svec;
     string line;
-    istream::iostate current_state;
     do{
         getline(istm,line);
         svec.push_back(line);
@@ -39,7 +38,6 @@ istream &readFun(istream &istm){
     for(vector<string>::size_type i=0;i!=svec.size();++i){
         cout<< svec[i]<< endl;
     }
-    current_state=istm.rdstate();
     istm.clear(~istream::eofbit);
     return istm;
 };
