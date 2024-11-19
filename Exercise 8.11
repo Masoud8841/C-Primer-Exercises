@@ -1,0 +1,5 @@
+in.close();
+in.clear();
+in.open(flie.c_str());
+// if clear is neglected, then the file may be in EOF status and openning a new file will not change that!
+// if clear is called after open file, then the status is cleared and one cannot determine whether open was successful or not
