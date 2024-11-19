@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <fstream>
+#include <sstream>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::ifstream;
+using std::istringstream;
+
+void readFile(const string, vector<string> &);
+void readWords(vector<string> &);
+
+int main(){
+    vector<string> lineVec;
+    string s1="Sales_item_7_32.h", s2="Sales_item_7_32.cpp";
+    readFile(s1,lineVec);
+    cout<<s1<<": ";
+    readWords(lineVec);
+
+    readFile(s2,lineVec);
+    cout<<s2<<": ";
+    readWords(lineVec);
+    return 0;
+}
+
+void readFile(const string file, vector<string> &lineVec){
+    ifstream input(file);
+    string line;
+    while(getline(input,line)){
+        lineVec.push_back(line);
+    }
+    return;
+}
+void readWords(vector<string> &lineVec){
+    vector<string>::const_iterator it=lineVec.begin();
+    int wordCount=0;
+    string word;
+    while(it!=lineVec.end()){
+        istringstream line(*it);
+        while(line>>word){
+            ++wordCount;
+        }
+        ++it;
+    }
+    cout<<"number of words is: "<<wordCount<<endl;
+    return;
+}
+
+/*
+Sales_item_7_32.h: number of words is: 46
+Sales_item_7_32.cpp: number of words is: 70
+*/
