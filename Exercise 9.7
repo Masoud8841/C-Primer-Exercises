@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+
+int main(){
+    list<int> lst1;
+    lst1.push_back(1);
+    list<int>::iterator iter1=lst1.begin(), iter2=lst1.end();
+    while(iter1 != iter2 ){
+        cout<<"iter1 is less than iter 2!"<<endl;
+        ++iter1;
+    }
+    
+
+    return 0;
+}
+
+/*
+output:
+iter1 is less than iter 2!
+*/
+// cannot compare iter1 and iter2 directly
