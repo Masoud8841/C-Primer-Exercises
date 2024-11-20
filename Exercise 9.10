@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+
+int main(){
+    const vector<int> ivec(10);
+    vector<string>    svec(10);
+    list<int>        ilist(10);
+
+    vector<int>::iterator    it1=ivec.begin(); // const_iterator should be used
+    list<int>::iterator      it2=slist.begin()+2; // cannot do addition, increament two times instead
+    vector<string>::iterator it3=&svec[0]; // cannot assign iterator with pointer, use svec.begin() instead
+
+    for(vector<string>::iterator it4=svec.begin();it4!=0;++it4){ // cannot compare with literal, use svec.end()
+        cout<<"increamented it4!"<<endl;
+    }
+    return 0;
+}
+
+/*
+output:
+
+*/
