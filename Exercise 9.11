@@ -1,0 +1,1 @@
+range of iterators: [iter1,iter2), it is left inclusive, iter2 must be either equal to iter1, empty range, or iter1 gets equal to iter2 after a number of increments to iter1
