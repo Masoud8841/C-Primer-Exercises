@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+
+bool search_element(vector<int>::const_iterator, vector<int>::const_iterator,const int);
+int main(){
+    vector<int> ivec;
+    ivec.push_back(0);ivec.push_back(1);ivec.push_back(2);ivec.push_back(3);ivec.push_back(4);ivec.push_back(5);
+    int val=6;
+    cout<< "value "<<val<<(search_element(ivec.begin(),ivec.end(),val)? " is found" : " is not found") <<endl;
+    val=5;
+    cout<< "value "<<val<<(search_element(ivec.begin(),ivec.end(),val)? " is found" : " is not found") <<endl;
+    cout<< "value "<<val<<(search_element(ivec.begin(),--ivec.end(),val)? " is found" : " is not found") <<endl;
+    return 0;
+}
+
+bool search_element(vector<int>::const_iterator beg, vector<int>::const_iterator end, int val){
+    for(; beg!=end; ++beg){
+        if(*beg==val)
+            return true;
+    }
+    return false;
+}
+/*
+output:
+value 6 is not found
+value 5 is found
+value 5 is not found
+*/
