@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+
+class Foo{
+    public:
+    Foo(int a){
+        cnt=a;
+    };
+    void print(){
+        static int i=0;
+        cout<< i<< ": Foo contains: "<<cnt << endl;
+        ++i;
+        return;
+    };
+    private:
+    int cnt;
+};
+
+int main(){
+    
+    list<Foo> Foo_list(10,5);
+    for(list<Foo>::iterator it=Foo_list.begin(); it!=Foo_list.end();++it){
+        it->print();
+    }
+
+    return 0;
+}
+
+/*
+output:
+0: Foo contains: 5
+1: Foo contains: 5
+2: Foo contains: 5
+3: Foo contains: 5
+4: Foo contains: 5
+5: Foo contains: 5
+6: Foo contains: 5
+7: Foo contains: 5
+8: Foo contains: 5
+9: Foo contains: 5
+*/
