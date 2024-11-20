@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+
+
+int main(){
+    int ia[]={0,1,1,2,3,5,8};
+    string sa[6]={"Fort Sumter", "Manassas", "Perryville","Vicksburg", "Meridian", "Chancellorsville"};
+    vector<string> svec(sa,sa+6);
+    list<int> ilist(ia+4,ia+6);
+    vector<int> ivec(ia,ia+8);
+    //list<string> slist(sa+6,sa);
+
+    cout<<"svec:"<<endl;
+    for(vector<string>::iterator it=svec.begin(); it != svec.end();++it){
+        cout<<*it<<" ";
+    }
+    cout<<endl;
+
+    cout<<"ilist:"<<endl;
+    for(list<int>::iterator it=ilist.begin(); it!=ilist.end();++it){
+        cout<<*it<<" ";
+    }
+    cout<<endl;
+
+    cout<<"ivec:"<<endl;
+    for(vector<int>::iterator it=ivec.begin(); it != ivec.end();++it){
+        cout<<*it<<" ";
+    }
+    cout<<endl;
+
+    /*cout<<"slist:"<<endl;
+    for(list<string>::iterator it=slist.begin(); it!=slist.end();++it){
+        cout<<*it<<" ";
+    }
+    cout<<endl;*/
+
+    return 0;
+}
+
+/*
+output:
+svec:
+Fort Sumter Manassas Perryville Vicksburg Meridian Chancellorsville 
+ilist:
+3 5 
+ivec:
+0 1 1 2 3 5 8 1 
+*/
+//slist gives segmentation fault and last element in ivec has garbage value!
