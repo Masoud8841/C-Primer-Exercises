@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+
+int main(){
+    vector<int> iv(10,5);
+    int some_val=5; 
+    vector<int>::iterator mid=iv.begin()+iv.size()/2;
+    vector<int>::difference_type mid_diff=iv.end()-mid;
+    vector<int>::iterator iter=iv.begin(); // must initialize iter
+    while( iter!=mid)
+        if(*iter==some_val)// *iter not iter
+        {
+            iter=iv.insert(iter,2*some_val);//use iter as function output
+            ++iter;++iter; // add one to get back to iter; add one proceed
+            mid=iv.end()-mid_diff; // update mid iterator!
+        }
+    for(vector<int>::iterator iter=iv.begin();iter!=iv.end();++iter)
+        cout<<*iter<<" ";
+    cout<<endl;
+    return 0;
+}
+
+/*
+output:
+10 5 10 5 10 5 10 5 10 5 5 5 5 5 5 
+*/
