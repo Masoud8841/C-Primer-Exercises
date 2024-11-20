@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+void print_deque(deque<int> &ideque){
+    static unsigned cnt=0;
+    cout<<"list["<<cnt<<"]:"<<endl;
+    cout<<"deque: ";
+    for(deque<int>::const_iterator it=ideque.begin();it!=ideque.end();++it){
+        cout<< (*it)<<" ";
+    }
+    cout<< "\n" << endl;
+    ++cnt;
+    return;
+}
+
+int main(){
+    deque<int> ideque;
+    list< deque<int> > deque_list;
+    ideque.push_back(1);
+    deque_list.push_back(ideque);
+
+    ideque.push_back(2);
+    deque_list.push_back(ideque);
+    
+    ideque.push_front(0);
+    deque_list.push_back(ideque);
+    
+    ideque.push_back(3);
+    deque_list.push_back(ideque);
+
+    for(list <deque<int> >::iterator it=deque_list.begin();it!=deque_list.end();++it)
+        print_deque(*it);
+
+    return 0;
+}
+
+/*
+output:
+list[0]:
+deque: 1 
+
+list[1]:
+deque: 1 2 
+
+list[2]:
+deque: 0 1 2 
+
+list[3]:
+deque: 0 1 2 3 
+*/
