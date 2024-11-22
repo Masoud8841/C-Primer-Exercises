@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+
+bool cmp_vec_list_int(const vector<int>&, const list<int>&);
+int main(){
+    vector<int> ivec1;
+    ivec1.push_back(1);ivec1.push_back(2);ivec1.push_back(3);ivec1.push_back(4);
+    list<int> ilist1, ilist2, ilist3;
+    ilist1.push_back(1);ilist1.push_back(2);ilist1.push_back(3);ilist1.push_back(4);
+    ilist2.push_back(1);ilist2.push_back(2);ilist2.push_back(3);ilist2.push_back(3);
+    ilist3.push_back(1);ilist3.push_back(2);ilist3.push_back(3);
+
+    cout<<"ivec1 and ilist1 are equal? "<<(cmp_vec_list_int(ivec1,ilist1)?"true":"false")<<endl;
+    cout<<"ivec1 and ilist2 are equal? "<<(cmp_vec_list_int(ivec1,ilist2)?"true":"false")<<endl;
+    cout<<"ivec1 and ilist3 are equal? "<<(cmp_vec_list_int(ivec1,ilist3)?"true":"false")<<endl;
+    return 0;
+}
+
+bool cmp_vec_list_int(const vector<int> &ivec, const list<int> &ilist){
+    if(ivec.size()!=ilist.size())
+        return false;
+    list<int>::const_iterator list_iter=ilist.begin();
+    for(vector<int>::const_iterator iter=ivec.begin();iter!=ivec.end();++iter){
+        if(*iter!=*list_iter)
+            return false;
+        ++list_iter;
+    }
+    return true;
+}
+/*
+output:
+ivec1 and ilist1 are equal? true
+ivec1 and ilist2 are equal? false
+ivec1 and ilist3 are equal? false
+*/
