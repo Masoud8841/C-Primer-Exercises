@@ -1,0 +1,72 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+#include <algorithm>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+using std::find;
+
+void print_ints(vector<int> &ivec){
+    for(vector<int>::iterator iter=ivec.begin();iter!=ivec.end();++iter){
+        cout<<*iter<<" ";
+    }
+    cout<<endl;
+    return;
+}
+void print_ints(list<int> &ilist){
+    for(list<int>::iterator iter=ilist.begin();iter!=ilist.end();++iter){
+        cout<<*iter<<" ";
+    }
+    cout<<endl;
+    return;
+}
+
+int main(){
+    int ia[]={0,1,1,2,3,5,8,13,21,55,89};
+    vector<int> ivec(ia,ia+sizeof(ia)/sizeof(int));
+    list<int> ilist(ia,ia+sizeof(ia)/sizeof(int));
+    cout<<"ivec contains:"<<endl;
+    print_ints(ivec);
+    cout<<"ilist contains:"<<endl;
+    print_ints(ilist);
+
+    vector<int>::iterator iter_vec=ivec.begin();
+    list<int>::iterator iter_list=ilist.begin();
+    for(int i=0;i!=sizeof(ia)/sizeof(int);++i){
+        if((*(ia+i))%2==0){
+            iter_vec=ivec.erase(iter_vec);
+            ++iter_list;
+        }
+        else{
+            iter_list=ilist.erase(iter_list);
+            ++iter_vec;
+        }
+    }
+    cout<<"ivec contains:"<<endl;
+    print_ints(ivec);
+    cout<<"ilist contains:"<<endl;
+    print_ints(ilist);
+
+
+
+    return 0;
+}
+
+/*
+output:
+ivec contains:
+0 1 1 2 3 5 8 13 21 55 89 
+ilist contains:
+0 1 1 2 3 5 8 13 21 55 89 
+ivec contains:
+1 1 3 5 13 21 55 89 
+ilist contains:
+0 2 8 
+*/
