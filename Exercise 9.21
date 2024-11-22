@@ -1,0 +1,2 @@
+if (c1 < c2)
+// both c1 and c2 have to be the same type and their elements should have defined relational operations
