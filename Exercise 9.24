@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+
+
+int main(){
+    vector<string> svec1, svec2;
+    svec1.push_back("first");svec1.push_back("second");svec1.push_back("third");
+
+    cout<<svec1.at(0)<<endl;
+    cout<<svec1.front()<<endl;
+    cout<<*svec1.begin()<<endl;
+
+    cout<<"empty vec:\n"<<endl;
+
+    cout<<svec2.front()<<endl; //returns empty
+    cout<<*svec2.begin()<<endl; // segmentation fault
+    cout<<svec2.at(0)<<endl; // uncaught exception
+
+    return 0;
+}
+
+/*
+output:
+first
+first
+first
+empty vec:
+
+
+*/
