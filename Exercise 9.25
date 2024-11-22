@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+#include <algorithm>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+using std::find;
+
+void print_vec_int(vector<int> &ivec){
+    cout<<"ivec contains:"<<endl;
+    vector<int>::difference_type dif_iter;
+    for(vector<int>::iterator iter=ivec.begin();iter!=ivec.end();++iter){
+        cout<<*iter<<" ";
+        dif_iter=iter-ivec.begin();
+        if(dif_iter%10==9)
+            cout<<endl;
+    }
+    cout<<endl;
+    return;
+}
+
+int main(){
+    vector<int> ivec;
+    ivec.push_back(1);ivec.push_back(2);ivec.push_back(3);ivec.push_back(4);
+    ivec.push_back(1);ivec.push_back(2);ivec.push_back(3);ivec.push_back(4);
+
+    int val1, val2;
+    vector<int>::iterator iter1, iter2;
+
+    val1=5;val2=4;
+    iter1=find(ivec.begin(),ivec.end(),val1);
+    iter2=find(iter1,ivec.end(),val2);
+    ivec.erase(iter1,iter2);
+    print_vec_int(ivec);
+
+    val1=5;val2=6;
+    iter1=find(ivec.begin(),ivec.end(),val1);
+    iter2=find(iter1,ivec.end(),val2);
+    ivec.erase(iter1,iter2);
+    print_vec_int(ivec);
+
+    val1=3;val2=2;
+    iter1=find(ivec.begin(),ivec.end(),val1);
+    iter2=find(iter1,ivec.end(),val2);
+    ivec.erase(iter1,iter2);
+    print_vec_int(ivec);
+
+
+    return 0;
+}
+
+/*
+output:
+ivec contains:
+1 2 3 4 1 2 3 4 
+ivec contains:
+1 2 3 4 1 2 3 4 
+ivec contains:
+1 2 2 3 4 
+*/
