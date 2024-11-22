@@ -1,0 +1,79 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+#include <algorithm>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+using std::find;
+
+void print_string(list<string> &slist){
+    cout<<"slist contains:"<<endl;
+    for(list<string>::iterator iter=slist.begin();iter!=slist.end();++iter){
+        cout<<*iter<<" ";
+    }
+    cout<<endl;
+    return;
+}
+void print_string(deque<string> &sdeque){
+    cout<<"sdeque contains:"<<endl;
+    for(deque<string>::iterator iter=sdeque.begin();iter!=sdeque.end();++iter){
+        cout<<*iter<<" ";
+    }
+    cout<<endl;
+    return;
+}
+
+int main(){
+    list<string> slist;
+    slist.push_back("first");slist.push_back("pause");slist.push_back("second");slist.push_back("pause");
+    deque<string> sdeque;
+    sdeque.push_back("first");sdeque.push_back("pause");sdeque.push_back("second");sdeque.push_back("pause");
+    
+    print_string(slist);
+    print_string(sdeque);
+
+    string val="pause";
+    list<string>::iterator iter_list=slist.begin();
+    deque<string>::iterator iter_deque=sdeque.begin();
+
+    while(iter_list!=slist.end()){
+        if(*iter_list==val){
+            iter_list=slist.erase(iter_list);
+        }
+        else{
+            ++iter_list;
+        }
+    }
+    while(iter_deque!=sdeque.end()){
+        if(*iter_deque==val){
+            iter_deque=sdeque.erase(iter_deque);
+        }
+        else{
+            ++iter_deque;
+        }
+    }
+
+    print_string(slist);
+    print_string(sdeque);
+
+    return 0;
+}
+
+/*
+output:
+slist contains:
+first pause second pause 
+sdeque contains:
+first pause second pause 
+slist contains:
+first second 
+sdeque contains:
+first second
+*/
