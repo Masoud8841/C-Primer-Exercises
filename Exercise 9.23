@@ -1,0 +1,2 @@
+vec.resize(n);
+// vec element type should have a default constructor to initialize it
