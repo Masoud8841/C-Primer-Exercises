@@ -1,0 +1,43 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <deque>
+#include <algorithm>
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+using std::vector;
+using std::list;
+using std::deque;
+using std::find;
+
+int main(){
+    list<char*> char_ptr_list;
+    char char_arr1[]="Hi";
+    char char_arr2[]="there!";
+    char char_arr3[]="My";
+    char char_arr4[]="name";
+    char char_arr5[]="is";
+    char char_arr6[]="Masoud.";
+
+    char_ptr_list.push_back(char_arr1);char_ptr_list.push_back(char_arr2);char_ptr_list.push_back(char_arr3);
+    char_ptr_list.push_back(char_arr4);char_ptr_list.push_back(char_arr5);char_ptr_list.push_back(char_arr6);
+    
+    vector<string> svec;
+    for(list<char*>::iterator iter=char_ptr_list.begin();iter!=char_ptr_list.end();++iter){
+        string str(*iter);
+        svec.push_back(str);
+    }
+    for(vector<string>::iterator iter=svec.begin();iter!=svec.end();++iter){
+        cout<<*iter<<" ";
+    }
+    cout<<endl;
+    return 0;
+}
+
+/*
+output:
+Hi there! My name is Masoud.
+*/
